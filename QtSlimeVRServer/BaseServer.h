@@ -19,9 +19,6 @@ namespace Network {
 		void initialize(QHostAddress i_oIp, ushort i_shPort);
 	public:
 		virtual void onSuccessfulListen() { }
-		//virtual void onPacketReceived(QHostAddress i_oAddress, ushort i_shPort, const Network::CPacket& i_oPacket) {}
-	private:
-		//void readPendingDatagrams();
 	public:
 		void addSession(const std::shared_ptr<TSession>& i_pSession)
 		{
@@ -33,6 +30,7 @@ namespace Network {
 			this->m_apSessions.remove(i_pSession);
 		}
 
+		void broadcast(const char* i_pBuffer, size_t i_nSize);
 	public:
 		size_t connectionCount() const
 		{
@@ -66,5 +64,10 @@ namespace Network {
 	{
 		this->m_oSocket.bind(i_oIp, i_shPort);
 		this->onSuccessfulListen();
+	}
+	template<typename TSession>
+	inline void CBaseServer<TSession>::broadcast(const char* i_pBuffer, size_t i_nSize)
+	{
+		this->m_oSocket.writeDatagram(i_pBuffer, i_nSize, QHostAddress::Broadcast, UDP_PORT);
 	}
 }

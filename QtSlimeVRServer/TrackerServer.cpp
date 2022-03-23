@@ -3,6 +3,7 @@
 #include "TrackerPacket.h"
 #include "TrackerPacketHandler.h"
 #include "Logger.h"
+#include "BroadcastSend.h"
 
 #include <QUdpSocket>
 
@@ -18,9 +19,9 @@ void Network::TrackerServer::CServer::onSuccessfulListen()
 	connect(this->getSocket(), &QUdpSocket::readyRead,
 		this, &Network::TrackerServer::CServer::readPendingDatagrams);
 
-	Network::Packet::TrackerPacket::Send::SHeartBeat grHartBeat;
 
-	this->getSocket()->writeDatagram(reinterpret_cast<char*>(&grHartBeat), grHartBeat.length(), QHostAddress::Broadcast, UDP_PORT);
+	Broadcast::Packet::TrackerServer::SendPairing();
+
 }
 
 

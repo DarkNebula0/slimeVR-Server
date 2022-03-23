@@ -1,6 +1,7 @@
 #pragma once
 
 #include "PacketBase.h"
+#include "CharArray.h"
 
 namespace Network
 {
@@ -10,8 +11,9 @@ namespace Network
 
             namespace Receive {
                 enum EID : uint32_t {
+                    Pairing = 0x00,
                     HeartBeat = 0x01,
-                    Handshake = 0x03,
+                    Handshake = 0x02,
                     RawCalibrationDate = 0x06,
                     CalibrationFinished = 0x07,
                     Config = 0x08,
@@ -31,20 +33,23 @@ namespace Network
                 };
 
                 struct SHandshake : SDefaultPacketHeader<SHandshake, EID::Handshake> {
-                    uint32_t nBoard;
                     uint32_t nImu;
-                    uint32_t nHardware;
-                    uint8_t achMach[6];
+                    CCharArray<6> achMac;
                 };
                 
             }
 
             namespace Send {
                 enum EID : uint32_t {
-                    HeartBeat = 0x00,
-                    Vibrate = 0x02,
-                    Handshake = 0x03,
-                    Command = 0x04,
+                    Pairing = 0x00,
+                    HeartBeat = 0x01,
+                    Handshake = 0x02,
+                };
+
+                struct SPairing : SPacketHeader<SPairing, EID::Pairing> {
+                };
+
+                struct SHandshake : SDefaultPacketHeader<SHandshake, EID::Handshake> {
                 };
 
                 struct SHeartBeat : SPacketHeader<SHeartBeat, EID::HeartBeat> {

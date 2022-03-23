@@ -20,14 +20,14 @@ namespace Network
 		struct SOperation
 		{
 		public:
-			uint32_t chID;
+			uint32_t nID;
 			fnFunctionBase<TSession> fnFunction;
 		public:
-			SOperation() : chID(0) {}
+			SOperation() : nID(0) {}
 			SOperation(const SOperation& i_oOther)
 			{
-				this->chID = i_oOther.chID;
-				this->fnFunction = i_oOther.chID;
+				this->nID = i_oOther.nID;
+				this->fnFunction = i_oOther.nID;
 			}
 			SOperation(SOperation<TSession> &&i_oOther) noexcept
 				{ this->operator=(i_oOther); }
@@ -35,7 +35,7 @@ namespace Network
 		public:
 			SOperation<TSession> &operator=(SOperation<TSession> &&i_oOther) noexcept
 			{
-				chID = i_oOther.chID;
+				nID = i_oOther.nID;
 				fnFunction = std::move(i_oOther.fnFunction);
 				return *this;
 			}
@@ -57,7 +57,7 @@ namespace Network
 		public:
 			_inline void addPacketOperation(SOperation<TSession> &i_grOperation)
 			{
-				this->m_afnPacket[i_grOperation.chID] = std::move(i_grOperation);
+				this->m_afnPacket[i_grOperation.nID] = std::move(i_grOperation);
 			}
 		public:
 			_inline void closePool()

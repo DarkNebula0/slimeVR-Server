@@ -56,6 +56,33 @@
     <Filter Include="Source Files\Network\Server\TrackerServer">
       <UniqueIdentifier>{0846e0eb-6928-4875-8a6e-b3a0a19fecca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet">
+      <UniqueIdentifier>{bedcad96-bf59-4e98-9999-b18c332da8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive">
+      <UniqueIdentifier>{8c82ebdf-f637-4517-8616-f7c3de9b0917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Send">
+      <UniqueIdentifier>{7918271d-fe81-4bbc-8ab6-a88c2fec7361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data">
+      <UniqueIdentifier>{24a4d8cf-a6c8-467d-9211-0cd9a44e9b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data\Tracker">
+      <UniqueIdentifier>{be179dbb-ef46-4e4d-80b0-853be876fd2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\Broadcast">
+      <UniqueIdentifier>{1e184ff5-5d68-471f-927a-976f8c338b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\Info">
+      <UniqueIdentifier>{da32597b-a9b4-4f7d-bb1b-8bd72ff525f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Send\Info">
+      <UniqueIdentifier>{7bba03d4-3a44-430b-b6d9-ece1425a47a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Send\Broadcast">
+      <UniqueIdentifier>{18cf1b1f-7d29-4822-822b-353cbe408d37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -84,6 +111,21 @@
     </ClCompile>
     <ClCompile Include="TrackerServer.cpp">
       <Filter>Source Files\Network\Server\TrackerServer</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker.cpp">
+      <Filter>Source Files\Data\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Broadcast.cpp">
+      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Broadcast</Filter>
+    </ClCompile>
+    <ClCompile Include="Info.cpp">
+      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoSend.cpp">
+      <Filter>Source Files\Network\PacketHandler\Packet\Send\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadcastSend.cpp">
+      <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +191,24 @@
     </ClInclude>
     <ClInclude Include="TrackerServer.h">
       <Filter>Source Files\Network\Server\TrackerServer</Filter>
+    </ClInclude>
+    <ClInclude Include="CharArray.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker.h">
+      <Filter>Source Files\Data\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Broadcast.h">
+      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Broadcast</Filter>
+    </ClInclude>
+    <ClInclude Include="Info.h">
+      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoSend.h">
+      <Filter>Source Files\Network\PacketHandler\Packet\Send\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="BroadcastSend.h">
+      <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
