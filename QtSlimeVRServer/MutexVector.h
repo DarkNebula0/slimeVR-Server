@@ -1,6 +1,10 @@
 #pragma once
-#include <vector>
 #include "Mutex.h"
+#include "Defines.h"
+#include "LockGuard.h"
+
+#include <vector>
+#include <functional>
 
 #define MutexVectorLockGuard(x) RecursiveLockGuard(x.mutex())
 #define MutexVectorLock(x)		RecursiveLockGuard(x.mutex().lock())

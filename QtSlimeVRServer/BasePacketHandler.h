@@ -1,8 +1,10 @@
 #pragma once
 #include "PacketBase.h"
 #include "Logger.h"
+#include "ThreadPool.h"
+#include "NetworkPacket.h"
+#include "Defines.h"
 
-#include <QThreadPool>
 #include <functional>
 #include <memory>
 #include <map>
@@ -18,7 +20,7 @@ namespace Network
 		struct SOperation
 		{
 		public:
-			byte chID;
+			uint32_t chID;
 			fnFunctionBase<TSession> fnFunction;
 		public:
 			SOperation() : chID(0) {}
@@ -46,9 +48,9 @@ namespace Network
 			CBaseHandler();
 			virtual ~CBaseHandler();
 		private:
-			std::map<byte, SOperation<TSession>> m_afnPacket;
+			std::map<uint32_t, SOperation<TSession>> m_afnPacket;
 		private:
-			QThreadPool *m_pPool;
+			CThreadPool *m_pPool;
 		public:
 			void handle(std::shared_ptr<TSession> i_pSession, const CNetworkPacket &i_oPacket, const bool i_bDectypt = false);
 			void createPool(const size_t i_nWorkerCount);
@@ -56,10 +58,6 @@ namespace Network
 			_inline void addPacketOperation(SOperation<TSession> &i_grOperation)
 			{
 				this->m_afnPacket[i_grOperation.chID] = std::move(i_grOperation);
-			}
-			_inline void removePacketOperation(const byte i_chID)
-			{
-				this->m_afnPacket[i_chID] = nullptr;
 			}
 		public:
 			_inline void closePool()
@@ -79,8 +77,6 @@ namespace Network
 		};
 	}
 }
-
-
 
 
 template<typename TSession>
@@ -107,9 +103,6 @@ void Network::Packet::CBaseHandler<TSession>::createPool(const size_t i_nWorkerC
 template<typename TSession>
 void Network::Packet::CBaseHandler<TSession>::handle(std::shared_ptr<TSession> i_pSession, const CNetworkPacket &i_oPacket, const bool i_bDectypt)
 {
-	if (!i_pSession->isValid())
-		return;
-
 	const ushort shLength = static_cast<ushort>(i_oPacket.size());
 	ushort shCursorPos = 0;
 
@@ -125,16 +118,11 @@ void Network::Packet::CBaseHandler<TSession>::handle(std::shared_ptr<TSession> i
 				const SOperation<TSession> &grOperation = this->m_afnPacket[pHeader->id()];
 				if (grOperation.fnFunction)
 				{
-					if (i_bDectypt)
-					{
-						GameCrypt::DecryptPacket(const_cast<char *>(i_oPacket.buffer() + shCursorPos), pHeader->length());
-					}
-					
 					grOperation.fnFunction(i_pSession, CNetworkPacket(i_oPacket.buffer() + shCursorPos, pHeader->length(), false, false));	
 				}
 				else
 				{
-					LOGW_DEBUG("PacketHandler-Function [" + std::string(typeid(TSession).name()) + "] Handler not found! ID: " + Utils::ToHexString<byte>(pHeader->id()));
+					LOGW_DEBUG("PacketHandler-Function [" + std::string(typeid(TSession).name()) + "] Handler not found! ID: " + Utils::ToHexString<uint32_t>(pHeader->id()));
 				}
 			}
 			else

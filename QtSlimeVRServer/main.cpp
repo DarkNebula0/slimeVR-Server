@@ -3,6 +3,7 @@
 #include "Defines.h"
 
 #include "CUDPServer.h"
+#include "TrackerServer.h"
 
 #if defined(Q_OS_WIN)
 #include <Windows.h>
@@ -30,7 +31,8 @@ int main(int argc, char *argv[])
         return -1;
 
     // Load server
-    CUDPServer udpServer(nullptr);
+    /*CUDPServer udpServer(nullptr);*/
+    TrackerServerInstance->initialize(QHostAddress::Any, UDP_PORT);
 
     return app.exec();
 }

@@ -7,7 +7,6 @@
 CUDPServer::CUDPServer(QObject *parent)
 	: QObject(parent), m_pUdpSocket(new QUdpSocket(this))
 {
-	// TODO: extract port
 	this->m_pUdpSocket->bind(QHostAddress::Any, UDP_PORT);
 
     Network::Packet::TrackerPacket::Send::SHeartBeat grHartBeat;

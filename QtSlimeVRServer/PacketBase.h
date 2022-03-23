@@ -33,31 +33,6 @@ namespace Network
 
 #pragma pack(pop)
 
-        using fnFunctionBase = std::function<void(const uint8_t* i_pBuffer, const uint16_t& i_nSize)>;
-
-        struct SOperation {
-        public:
-            uint32_t chID;
-            fnFunctionBase fnFunction;
-        public:
-            SOperation() : chID(0) {}
-
-            SOperation(const SOperation& i_oOther) {
-                this->chID = i_oOther.chID;
-                this->fnFunction = i_oOther.fnFunction;
-            }
-
-            SOperation(SOperation&&) = default;
-
-            virtual ~SOperation() = default;
-
-        public:
-            SOperation& operator=(SOperation&& i_oOther) noexcept {
-                chID = i_oOther.chID;
-                fnFunction = std::move(i_oOther.fnFunction);
-                return *this;
-            }
-        };
     }
 }
 

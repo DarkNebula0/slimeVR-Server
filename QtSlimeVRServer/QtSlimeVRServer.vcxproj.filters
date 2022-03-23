@@ -41,6 +41,24 @@
     <Filter Include="Source Files\Utils\Logger">
       <UniqueIdentifier>{b2ec0cd7-2cb2-4234-bcad-d36fc4613c6f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utils\Packet">
+      <UniqueIdentifier>{4b4c3fbe-6fdd-494b-b421-a14d30944df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\Session">
+      <UniqueIdentifier>{04e2b356-2ab5-4d5e-b0fb-d740617b0af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\TrackerServerHandler">
+      <UniqueIdentifier>{c9f8483d-4cd9-4d46-a1fe-4c23f6f5c84e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils\Timer">
+      <UniqueIdentifier>{5200912e-05e9-4332-82ce-5a53f570ffbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\Server">
+      <UniqueIdentifier>{7ca5088c-4d5e-4208-9b8f-5ca4c9cbc911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network\Server\TrackerServer">
+      <UniqueIdentifier>{0846e0eb-6928-4875-8a6e-b3a0a19fecca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,20 +70,27 @@
     <None Include="main.qml">
       <Filter>Source Files</Filter>
     </None>
-    <ClCompile Include="CUDPServer.cpp">
-      <Filter>Source Files\Server</Filter>
-    </ClCompile>
     <ClCompile Include="ThreadPool.cpp">
       <Filter>Source Files\Utils\ThreadPool</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files\Utils\Logger</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="CUDPServer.h">
+    <ClCompile Include="TrackerSession.cpp">
+      <Filter>Source Files\Network\Session</Filter>
+    </ClCompile>
+    <ClCompile Include="TrackerPacketHandler.cpp">
+      <Filter>Source Files\Network\PacketHandler\TrackerServerHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\Utils\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="CUDPServer.cpp">
       <Filter>Source Files\Server</Filter>
-    </QtMoc>
+    </ClCompile>
+    <ClCompile Include="TrackerServer.cpp">
+      <Filter>Source Files\Network\Server\TrackerServer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -104,5 +129,37 @@
     <ClInclude Include="Logger.h">
       <Filter>Source Files\Utils\Logger</Filter>
     </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkPacket.h">
+      <Filter>Source Files\Utils\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerSession.h">
+      <Filter>Source Files\Network\Session</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerPacketHandler.h">
+      <Filter>Source Files\Network\PacketHandler\TrackerServerHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Source Files\Utils\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseServer.h">
+      <Filter>Source Files\Network\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkId.h">
+      <Filter>Source Files\Network\Session</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerServer.h">
+      <Filter>Source Files\Network\Server\TrackerServer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CUDPServer.h">
+      <Filter>Source Files\Server</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

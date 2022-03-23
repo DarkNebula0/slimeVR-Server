@@ -58,6 +58,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -88,7 +91,11 @@
     <ClCompile Include="CUDPServer.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TrackerServer.cpp" />
+    <ClCompile Include="TrackerSession.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="TrackerPacketHandler.cpp" />
     <QtRcc Include="qml.qrc" />
     <None Include="main.qml" />
   </ItemGroup>
@@ -97,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasePacketHandler.h" />
+    <ClInclude Include="BaseServer.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="GlobalExceptionUtils.h" />
@@ -104,10 +112,18 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Mutex.h" />
     <ClInclude Include="MutexVector.h" />
+    <ClInclude Include="NetworkId.h" />
+    <ClInclude Include="NetworkPacket.h" />
     <ClInclude Include="PacketBase.h" />
     <ClInclude Include="SafeQueue.h" />
+    <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="TrackerServer.h" />
+    <ClInclude Include="TrackerSession.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="TrackerPacket.h" />
+    <ClInclude Include="TrackerPacketHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

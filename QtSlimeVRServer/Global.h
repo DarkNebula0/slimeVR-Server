@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "GlobalExceptionUtils.h"
+#include "StringUtils.h"
 
 
 #define SIZEOF_ARRAY(x)				(sizeof(x) / sizeof(x[0]))
