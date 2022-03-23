@@ -1,8 +1,9 @@
 #include "Logger.h"
+#include "Mutex.h"
 
 #include <iostream>
 #include <ctime>
-#include <QMutex.h>
+
 #include<QDebug>
 
 #if defined(Q_OS_WIN)
@@ -11,7 +12,7 @@
 
 namespace Logger
 {
-	QMutex g_oMutex;
+	CMutex g_oMutex;
 
 	std::string DateTime()
 	{
