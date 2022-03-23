@@ -44,10 +44,8 @@ public:
 	T dequeue(const bool i_fMove = true)
 	{
 		RecursiveLockGuard(this->m_oMutex);
-
 		T tValue = this->front(i_fMove);
 		this->pop();
-
 		return tValue;
 	}
 

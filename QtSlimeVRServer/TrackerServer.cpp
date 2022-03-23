@@ -28,8 +28,7 @@ void Network::TrackerServer::CServer::readPendingDatagrams()
 {
 	while (this->getSocket()->hasPendingDatagrams()) {
 		QNetworkDatagram oDatagram = this->getSocket()->receiveDatagram();
-		const CPacket oPacket(oDatagram.data().data(), oDatagram.data().size());
-
+		
 		auto pSession = this->findNetworkIp(oDatagram.senderAddress());
 		if (!pSession) {
 			LOGI_DEBUG("[TrackerServer] New client connected! IP: " + oDatagram.senderAddress().toString().toStdString());
@@ -38,6 +37,6 @@ void Network::TrackerServer::CServer::readPendingDatagrams()
 			CBaseServer::addSession(pSession);
 		}
 
-		return TrackerHandlerInstance->addTask(pSession, CNetworkPacket(oPacket, true, true), false);
+		return TrackerHandlerInstance->addTask(pSession, CNetworkPacket(oDatagram.data().data(), oDatagram.data().size(), true, true), false);
 	}
 }

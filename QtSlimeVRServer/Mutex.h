@@ -1,6 +1,6 @@
 #pragma once
-#include <QMutex>
 #include "Global.h"
+#include <mutex>
 
 class CMutex
 {
@@ -25,5 +25,5 @@ public:
 	}
 
 private:
-	mutable QMutex m_oMutex;
+	mutable std::recursive_mutex m_oMutex;
 };

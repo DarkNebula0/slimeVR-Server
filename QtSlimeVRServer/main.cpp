@@ -2,7 +2,6 @@
 #include <QQmlApplicationEngine>
 #include "Defines.h"
 
-#include "CUDPServer.h"
 #include "TrackerServer.h"
 
 #if defined(Q_OS_WIN)

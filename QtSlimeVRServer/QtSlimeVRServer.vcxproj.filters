@@ -17,9 +17,6 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
-    <Filter Include="Source Files\Server">
-      <UniqueIdentifier>{69b176f4-8d2e-4e37-94fc-fea253a711d3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Network">
       <UniqueIdentifier>{ac3fc055-3b39-4b96-b4c8-54b2c54be801}</UniqueIdentifier>
     </Filter>
@@ -84,9 +81,6 @@
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Source Files\Utils\Timer</Filter>
-    </ClCompile>
-    <ClCompile Include="CUDPServer.cpp">
-      <Filter>Source Files\Server</Filter>
     </ClCompile>
     <ClCompile Include="TrackerServer.cpp">
       <Filter>Source Files\Network\Server\TrackerServer</Filter>
@@ -156,10 +150,5 @@
     <ClInclude Include="TrackerServer.h">
       <Filter>Source Files\Network\Server\TrackerServer</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="CUDPServer.h">
-      <Filter>Source Files\Server</Filter>
-    </QtMoc>
   </ItemGroup>
 </Project>

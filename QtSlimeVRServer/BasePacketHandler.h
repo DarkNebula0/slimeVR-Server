@@ -103,8 +103,8 @@ void Network::Packet::CBaseHandler<TSession>::createPool(const size_t i_nWorkerC
 template<typename TSession>
 void Network::Packet::CBaseHandler<TSession>::handle(std::shared_ptr<TSession> i_pSession, const CNetworkPacket &i_oPacket, const bool i_bDectypt)
 {
-	const ushort shLength = static_cast<ushort>(i_oPacket.size());
-	ushort shCursorPos = 0;
+	const uint16_t shLength = static_cast<uint16_t>(i_oPacket.size());
+	uint16_t shCursorPos = 0;
 
 	while (shLength - shCursorPos >= sizeof(SPacketHeader<>) && shCursorPos < shLength)
 	{
