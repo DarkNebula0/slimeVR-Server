@@ -28,5 +28,9 @@ void Network::Packet::TrackerServer::CHandler::initialize()
 	grOperation.fnFunction = &Info::Packet::TrackerServer::HandshakeRequest;
 	AddOperation();
 
+	grOperation.nID = TrackerPacket::Receive::EID::RSSI;
+	grOperation.fnFunction = &Info::Packet::TrackerServer::RSSIRequest;
+	AddOperation();
+
 	LOGI("[TrackerServer] Packet initialized");
 }

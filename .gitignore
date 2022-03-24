@@ -13,6 +13,7 @@
 # Folders
 **/x64/
 **/.vs/
+**/enc_temp_folder/
 
 # Qt-es
 object_script.*.Release
