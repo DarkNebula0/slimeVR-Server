@@ -16,7 +16,10 @@ public:
 
 	void unlock() const
 	{
+#pragma warning( push )
+#pragma warning( disable : 26110)
 		return this->m_oMutex.unlock();
+#pragma warning( pop ) 
 	}
 
 	bool tryLock() const

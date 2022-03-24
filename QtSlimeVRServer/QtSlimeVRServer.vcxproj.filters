@@ -83,6 +83,9 @@
     <Filter Include="Source Files\Network\PacketHandler\Packet\Send\Broadcast">
       <UniqueIdentifier>{18cf1b1f-7d29-4822-822b-353cbe408d37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{af3a54ce-453d-4ea0-a8d9-a85bbab0d83f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -126,6 +129,9 @@
     </ClCompile>
     <ClCompile Include="BroadcastSend.cpp">
       <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -210,5 +216,10 @@
     <ClInclude Include="BroadcastSend.h">
       <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Gui.h">
+      <Filter>Source Files\UI</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

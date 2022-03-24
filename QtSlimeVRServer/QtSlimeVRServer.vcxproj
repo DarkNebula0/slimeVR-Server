@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClCompile Include="Broadcast.cpp" />
     <ClCompile Include="BroadcastSend.cpp" />
+    <ClCompile Include="Gui.cpp" />
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="InfoSend.cpp" />
     <ClCompile Include="Logger.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="GlobalExceptionUtils.h" />
+    <QtMoc Include="Gui.h" />
     <ClInclude Include="Info.h" />
     <ClInclude Include="InfoSend.h" />
     <ClInclude Include="LockGuard.h" />

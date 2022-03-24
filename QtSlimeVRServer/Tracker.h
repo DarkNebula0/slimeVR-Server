@@ -6,7 +6,7 @@
 class CTracker
 {
 public:
-	CTracker() = default;
+	CTracker();
 	virtual ~CTracker() = default;
 public:
 	enum EImu : uint32_t {

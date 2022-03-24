@@ -88,27 +88,27 @@ void Logger::Log(const std::string& i_sMsg, ESeverity i_eSeverity)
 
 	switch (i_eSeverity)
 	{
-	case Fatal:
+	case ESeverity::Fatal:
 		stOut += "[Fatal]: ";
 		eColor = DarkRed;
 		break;
-	case Error:
+	case ESeverity::Error:
 		stOut += "[Error]: ";
 		eColor = BrightRed;
 		break;
-	case Warning:
+	case ESeverity::Warning:
 		stOut += "[Warning]: ";
 		eColor = BrightYellow;
 		break;
-	case Info:
+	case ESeverity::Info:
 		stOut += "[Info]: ";
 		eColor = BrightTurkeyse;
 		break;
-	case Debug:
+	case ESeverity::Debug:
 		stOut += "[Debug]: ";
 		eColor = DarkTurkeyse;
 		break;
-	case Verbose:
+	case ESeverity::Verbose:
 		stOut += "[Verbose]: ";
 		eColor = BrightGreen;
 		break;
@@ -121,22 +121,22 @@ void Logger::Log(const std::string& i_sMsg, ESeverity i_eSeverity)
 	Logger::g_oMutex.lock();
 	switch (i_eSeverity)
 	{
-	case Fatal:
+	case ESeverity::Fatal:
 		qCritical() << stOut.c_str() << "[Fatal]: " << i_sMsg.c_str();
 		break;
-	case Error:
+	case ESeverity::Error:
 		qCritical() << stOut.c_str() << "[Error]: " << i_sMsg.c_str();
 		break;
-	case Warning:
+	case ESeverity::Warning:
 		qWarning() << stOut.c_str() << "[Warning]: " << i_sMsg.c_str();
 		break;
-	case Info:
+	case ESeverity::Info:
 		qInfo() << stOut.c_str() << "[Info]: " << i_sMsg.c_str();
 		break;
-	case Debug:
+	case ESeverity::Debug:
 		qDebug() << stOut.c_str() << "[Debug]: " << i_sMsg.c_str();
 		break;
-	case Verbose:
+	case ESeverity::Verbose:
 		qDebug() << stOut.c_str() << "[Verbose]: " << i_sMsg.c_str();
 		break;
 	}

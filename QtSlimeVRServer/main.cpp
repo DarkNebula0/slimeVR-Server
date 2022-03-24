@@ -1,8 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include "Defines.h"
 
 #include "TrackerServer.h"
+#include "Gui.h"
 
 #if defined(Q_OS_WIN)
 #include <Windows.h>
@@ -29,8 +31,10 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
+    CGui oGuiClass;
+    engine.rootContext()->setContextProperty("_gui", &oGuiClass);
+
     // Load server
-    /*CUDPServer udpServer(nullptr);*/
     TrackerServerInstance->initialize(QHostAddress::Any, UDP_PORT);
 
     return app.exec();

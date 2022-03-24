@@ -3,7 +3,7 @@
 
 namespace Logger
 {
-	enum ESeverity : uint8_t
+	enum class ESeverity : uint8_t
 	{
 		None,
 		Fatal,
@@ -16,12 +16,12 @@ namespace Logger
 
 	void Initialize();
 	void SetTitle(const std::string& i_sTitle);
-	void Log(const std::string& i_sMsg, ESeverity i_eSeverity = None);
+	void Log(const std::string& i_sMsg, ESeverity i_eSeverity = ESeverity::None);
 
 	void NewLine();
 	void WaitEnter();
 
-	__forceinline void LogDebug(const std::string& i_sMsg, const ESeverity i_eSeverity = None)
+	__forceinline void LogDebug(const std::string& i_sMsg, const ESeverity i_eSeverity = ESeverity::None)
 	{
 #ifdef _DEBUG
 		return Log("[Dbg]: " + i_sMsg, i_eSeverity);

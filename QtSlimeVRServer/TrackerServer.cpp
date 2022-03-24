@@ -3,7 +3,6 @@
 #include "TrackerPacket.h"
 #include "TrackerPacketHandler.h"
 #include "Logger.h"
-#include "BroadcastSend.h"
 
 #include <QUdpSocket>
 
@@ -18,9 +17,6 @@ void Network::TrackerServer::CServer::onSuccessfulListen()
 	// Connect recv event
 	connect(this->getSocket(), &QUdpSocket::readyRead,
 		this, &Network::TrackerServer::CServer::readPendingDatagrams);
-
-
-	Broadcast::Packet::TrackerServer::SendPairing();
 
 }
 
