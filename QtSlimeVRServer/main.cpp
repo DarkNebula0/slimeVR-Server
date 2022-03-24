@@ -4,6 +4,7 @@
 #include "Defines.h"
 
 #include "TrackerServer.h"
+#include "SideTasksController.h"
 #include "Gui.h"
 
 #if defined(Q_OS_WIN)
@@ -36,6 +37,8 @@ int main(int argc, char *argv[])
 
     // Load server
     TrackerServerInstance->initialize(QHostAddress::Any, UDP_PORT);
+
+    SideTaskControllerInstance->start();
 
     return app.exec();
 }

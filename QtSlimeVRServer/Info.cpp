@@ -16,6 +16,7 @@ void Info::Packet::TrackerServer::HandshakeRequest(const std::shared_ptr<CTracke
 	auto &trackerInfo = i_pSession->tracker().info();
 	trackerInfo.eIMU = static_cast<CTracker::EImu>(p->nImu);
 	trackerInfo.chMAC =p->achMac;
+	i_pSession->tracker().setReady();
 
 	LOGI_DEBUG("[HandshakeRequest] New Tracker IMU-Type: " + std::to_string(trackerInfo.eIMU));
 
@@ -24,5 +25,5 @@ void Info::Packet::TrackerServer::HandshakeRequest(const std::shared_ptr<CTracke
 
 void Info::Packet::TrackerServer::HeartBeatRequest(const std::shared_ptr<CTrackerSession>& i_pSession, const CNetworkPacket& i_oPacket)
 {
-	i_pSession->restartTimer();
+	i_pSession->restartHeartBeatTimer();
 }

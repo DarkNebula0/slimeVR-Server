@@ -86,6 +86,9 @@
     <Filter Include="Source Files\UI">
       <UniqueIdentifier>{af3a54ce-453d-4ea0-a8d9-a85bbab0d83f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SideTasks">
+      <UniqueIdentifier>{d6f6ee94-f26f-4b7c-9f15-7eff0a0a8fc3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -94,9 +97,6 @@
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <None Include="main.qml">
-      <Filter>Source Files</Filter>
-    </None>
     <ClCompile Include="ThreadPool.cpp">
       <Filter>Source Files\Utils\ThreadPool</Filter>
     </ClCompile>
@@ -132,6 +132,12 @@
     </ClCompile>
     <ClCompile Include="Gui.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SideTasks.cpp">
+      <Filter>Source Files\SideTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="SideTasksController.cpp">
+      <Filter>Source Files\SideTasks</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,5 +227,16 @@
     <QtMoc Include="Gui.h">
       <Filter>Source Files\UI</Filter>
     </QtMoc>
+    <QtMoc Include="SideTasks.h">
+      <Filter>Source Files\SideTasks</Filter>
+    </QtMoc>
+    <QtMoc Include="SideTasksController.h">
+      <Filter>Source Files\SideTasks</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="main.qml">
+      <Filter>Source Files\UI</Filter>
+    </None>
   </ItemGroup>
 </Project>

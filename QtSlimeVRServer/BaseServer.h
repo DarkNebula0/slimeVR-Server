@@ -46,7 +46,7 @@ namespace Network {
 			return &m_oSocket;
 		}
 
-	private:
+	protected:
 		CMutexVector<std::shared_ptr<TSession>> m_apSessions;
 		QUdpSocket m_oSocket;
 	};

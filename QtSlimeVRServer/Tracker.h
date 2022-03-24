@@ -23,6 +23,8 @@ private:
 	bool m_bIsReady;
 public:
 	__inline SInfo& info() { return this->m_grInfo; }
-public:
 	__inline bool isReady() { return this->m_bIsReady; }
+public:
+	__inline void setReady() { this->m_bIsReady = true; }
+
 };

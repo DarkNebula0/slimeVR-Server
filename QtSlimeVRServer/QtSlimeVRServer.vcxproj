@@ -95,6 +95,8 @@
     <ClCompile Include="InfoSend.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SideTasks.cpp" />
+    <ClCompile Include="SideTasksController.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Tracker.cpp" />
     <ClCompile Include="TrackerServer.cpp" />
@@ -124,6 +126,8 @@
     <ClInclude Include="NetworkPacket.h" />
     <ClInclude Include="PacketBase.h" />
     <ClInclude Include="SafeQueue.h" />
+    <QtMoc Include="SideTasks.h" />
+    <QtMoc Include="SideTasksController.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Tracker.h" />
