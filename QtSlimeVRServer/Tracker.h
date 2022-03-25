@@ -9,14 +9,29 @@ public:
 	CTracker();
 	virtual ~CTracker() = default;
 public:
-	enum EImu : uint32_t {
-		IMU_ICM20948 = 0x00,
+	enum class EImu : uint32_t {
+		NONE = 0x00,
+		IMU_ICM20948 = 0x01,
+	};
+
+	enum class EEmuState : uint8_t {
+		SENSOR_OFFLINE = 0x00,
+		SENSOR_OK,
+		SENSOR_ERROR
 	};
 
 	struct SInfo
 	{
-		EImu eIMU;
+		EImu eIMU0;
+		EImu eIMU1;
+		EEmuState eIMUState0;
+		EEmuState eIMUState1;
 		CCharArray<6> chMAC;
+		SInfo() 
+			: eIMU0(EImu::NONE), eIMU1(EImu::NONE)
+			, eIMUState0(EEmuState::SENSOR_OFFLINE)
+			, eIMUState1(EEmuState::SENSOR_OFFLINE)
+		{}
 	};
 private:
 	SInfo m_grInfo;

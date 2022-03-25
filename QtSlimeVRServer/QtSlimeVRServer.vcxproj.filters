@@ -89,6 +89,9 @@
     <Filter Include="Source Files\SideTasks">
       <UniqueIdentifier>{d6f6ee94-f26f-4b7c-9f15-7eff0a0a8fc3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\SensorData">
+      <UniqueIdentifier>{d364f7e7-a7a5-484f-9f67-7c9a9a71b7ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -138,6 +141,9 @@
     </ClCompile>
     <ClCompile Include="SideTasksController.cpp">
       <Filter>Source Files\SideTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="SensorData.cpp">
+      <Filter>Source Files\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="BroadcastSend.h">
       <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
+    </ClInclude>
+    <ClInclude Include="SensorData.h">
+      <Filter>Source Files\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

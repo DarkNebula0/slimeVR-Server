@@ -4,6 +4,7 @@
 #include "Broadcast.h"
 #include "TrackerPacket.h"
 #include "Info.h"
+#include "SensorData.h"
 
 
 #define AddOperation() (this->addPacketOperation(grOperation))
@@ -16,10 +17,12 @@ void Network::Packet::TrackerServer::CHandler::initialize()
 
 	SOperation<CTrackerSession> grOperation;
 
+	// Broadcast
 	grOperation.nID = TrackerPacket::Receive::EID::Pairing;
 	grOperation.fnFunction = &Broadcast::Packet::TrackerServer::PairingRequest;
 	AddOperation();
 
+	// Info
 	grOperation.nID = TrackerPacket::Receive::EID::HeartBeat;
 	grOperation.fnFunction = &Info::Packet::TrackerServer::HeartBeatRequest;
 	AddOperation();
@@ -30,6 +33,15 @@ void Network::Packet::TrackerServer::CHandler::initialize()
 
 	grOperation.nID = TrackerPacket::Receive::EID::RSSI;
 	grOperation.fnFunction = &Info::Packet::TrackerServer::RSSIRequest;
+	AddOperation();
+
+	grOperation.nID = TrackerPacket::Receive::EID::SensorState;
+	grOperation.fnFunction = &Info::Packet::TrackerServer::SensorStateRequest;
+	AddOperation();
+
+	// SensorData
+	grOperation.nID = TrackerPacket::Receive::EID::RotationData;
+	grOperation.fnFunction = &SensorData::Packet::TrackerServer::RotationDataRequest;
 	AddOperation();
 
 	LOGI("[TrackerServer] Packet initialized");
