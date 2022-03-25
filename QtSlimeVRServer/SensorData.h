@@ -1,7 +1,7 @@
 #pragma once
 
 #include "TrackerSession.h"
-#include "NetworkPacket.h"
+#include "../Core/NetworkPacket.h"
 
 namespace SensorData
 {

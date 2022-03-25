@@ -29,26 +29,11 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{c0a55645-aa85-48b0-a572-fc44a3d2feb3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Utils\Mutex">
-      <UniqueIdentifier>{ec315881-c466-4a33-9fde-c99703df1780}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utils\ThreadPool">
-      <UniqueIdentifier>{a5efd230-502a-4b9b-af7a-fd4bbd2d1ff9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utils\Logger">
-      <UniqueIdentifier>{b2ec0cd7-2cb2-4234-bcad-d36fc4613c6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utils\Packet">
-      <UniqueIdentifier>{4b4c3fbe-6fdd-494b-b421-a14d30944df2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Network\Session">
       <UniqueIdentifier>{04e2b356-2ab5-4d5e-b0fb-d740617b0af1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Network\PacketHandler\TrackerServerHandler">
       <UniqueIdentifier>{c9f8483d-4cd9-4d46-a1fe-4c23f6f5c84e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utils\Timer">
-      <UniqueIdentifier>{5200912e-05e9-4332-82ce-5a53f570ffbf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Network\Server">
       <UniqueIdentifier>{7ca5088c-4d5e-4208-9b8f-5ca4c9cbc911}</UniqueIdentifier>
@@ -92,6 +77,9 @@
     <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\SensorData">
       <UniqueIdentifier>{d364f7e7-a7a5-484f-9f67-7c9a9a71b7ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utils\Logger">
+      <UniqueIdentifier>{6d167f03-2b1e-4118-bddf-db9573de1187}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -100,20 +88,11 @@
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <ClCompile Include="ThreadPool.cpp">
-      <Filter>Source Files\Utils\ThreadPool</Filter>
-    </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Source Files\Utils\Logger</Filter>
-    </ClCompile>
     <ClCompile Include="TrackerSession.cpp">
       <Filter>Source Files\Network\Session</Filter>
     </ClCompile>
     <ClCompile Include="TrackerPacketHandler.cpp">
       <Filter>Source Files\Network\PacketHandler\TrackerServerHandler</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files\Utils\Timer</Filter>
     </ClCompile>
     <ClCompile Include="TrackerServer.cpp">
       <Filter>Source Files\Network\Server\TrackerServer</Filter>
@@ -145,13 +124,13 @@
     <ClCompile Include="SensorData.cpp">
       <Filter>Source Files\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\Utils\Logger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PacketBase.h">
-      <Filter>Source Files\Network\Packet</Filter>
     </ClInclude>
     <ClInclude Include="TrackerPacket.h">
       <Filter>Source Files\Network\Packet</Filter>
@@ -159,47 +138,11 @@
     <ClInclude Include="BasePacketHandler.h">
       <Filter>Source Files\Network\PacketHandler</Filter>
     </ClInclude>
-    <ClInclude Include="SafeQueue.h">
-      <Filter>Source Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Global.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GlobalExceptionUtils.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LockGuard.h">
-      <Filter>Source Files\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="MutexVector.h">
-      <Filter>Source Files\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="Mutex.h">
-      <Filter>Source Files\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="ThreadPool.h">
-      <Filter>Source Files\Utils\ThreadPool</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Source Files\Utils\Logger</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Source Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkPacket.h">
-      <Filter>Source Files\Utils\Packet</Filter>
-    </ClInclude>
     <ClInclude Include="TrackerSession.h">
       <Filter>Source Files\Network\Session</Filter>
     </ClInclude>
     <ClInclude Include="TrackerPacketHandler.h">
       <Filter>Source Files\Network\PacketHandler\TrackerServerHandler</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Source Files\Utils\Timer</Filter>
-    </ClInclude>
-    <ClInclude Include="StringUtils.h">
-      <Filter>Source Files\Utils</Filter>
     </ClInclude>
     <ClInclude Include="BaseServer.h">
       <Filter>Source Files\Network\Server</Filter>
@@ -209,9 +152,6 @@
     </ClInclude>
     <ClInclude Include="TrackerServer.h">
       <Filter>Source Files\Network\Server\TrackerServer</Filter>
-    </ClInclude>
-    <ClInclude Include="CharArray.h">
-      <Filter>Source Files\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Tracker.h">
       <Filter>Source Files\Data\Tracker</Filter>
@@ -230,6 +170,9 @@
     </ClInclude>
     <ClInclude Include="SensorData.h">
       <Filter>Source Files\Network\PacketHandler\Packet\Receive\SensorData</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Source Files\Utils\Logger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

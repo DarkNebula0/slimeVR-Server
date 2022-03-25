@@ -1,7 +1,7 @@
 #pragma once
 #include "Defines.h"
-#include "MutexVector.h"
-#include "NetworkPacket.h"
+#include "../Core/MutexVector.h"
+#include "../Core/NetworkPacket.h"
 
 #include <QNetworkDatagram>
 #include <QUdpSocket>

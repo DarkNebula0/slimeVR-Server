@@ -1,9 +1,9 @@
 #pragma once
-#include "PacketBase.h"
-#include "Logger.h"
-#include "ThreadPool.h"
-#include "NetworkPacket.h"
 #include "Defines.h"
+#include "Logger.h"
+#include "../Core/PacketBase.h"
+#include "../Core/ThreadPool.h"
+#include "../Core/NetworkPacket.h"
 
 #include <functional>
 #include <memory>

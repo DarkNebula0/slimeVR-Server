@@ -1,7 +1,7 @@
 #pragma once
 
-#include "PacketBase.h"
-#include "CharArray.h"
+#include "../Core/PacketBase.h"
+#include "../Core/CharArray.h"
 
 namespace Network
 {
@@ -39,6 +39,7 @@ namespace Network
 
                 struct SRotationdata : SDefaultPacketHeader<SRotationdata, EID::RotationData> {
                     uint8_t nId;
+                    uint32_t nAccuracy;
                     double dSensorRotation;
                     double dX;
                     double dY;

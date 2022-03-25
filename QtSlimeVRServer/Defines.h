@@ -1,5 +1,9 @@
 #pragma once
-#include "Global.h"
+#include "../Core/Global.h"
+
+#define CheckPacket(Packet, xStruct) if (Packet.size() < sizeof(xStruct)) return;
+#define BroadcastStruct(xStruct) (TrackerServerInstance->broadcast(reinterpret_cast<const char*>(&xStruct), xStruct.length()))
+#define SendStruct(xStruct, session) (session->send(reinterpret_cast<const char*>(&xStruct), xStruct.length()))
 
 // Global
 #define CONSOLE_TITLE "SlimeVR Server"

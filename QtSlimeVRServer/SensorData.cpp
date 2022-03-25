@@ -3,7 +3,7 @@
 #include "Tracker.h"
 #include "InfoSend.h"
 #include "Logger.h"
-#include "Global.h"
+#include "Defines.h"
 
 using namespace Network::Packet::TrackerPacket::Receive;
 

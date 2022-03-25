@@ -1,7 +1,7 @@
 #pragma once
 #include "BasePacketHandler.h"
-#include "Singleton.h"
 #include "TrackerSession.h"
+#include "../Core/Singleton.h"
 
 namespace Network
 {

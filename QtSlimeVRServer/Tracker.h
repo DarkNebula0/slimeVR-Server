@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "CharArray.h"
+#include "../Core/CharArray.h"
 
 class CTracker
 {

@@ -1,9 +1,9 @@
 #pragma once
-#include "Timer.h"
 #include "Defines.h"
-#include "NetworkPacket.h"
 #include "NetworkId.h"
 #include "Tracker.h"
+#include "../Core/Timer.h"
+#include "../Core/NetworkPacket.h"
 
 #include <memory>
 #include <QUdpSocket>

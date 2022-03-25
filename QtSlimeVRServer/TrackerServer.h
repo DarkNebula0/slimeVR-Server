@@ -1,10 +1,10 @@
 #pragma once
-#include "NetworkPacket.h"
 #include "NetworkId.h"
 #include "BaseServer.h"
 #include "TrackerSession.h"
-#include "Singleton.h"
-#include "MutexVector.h"
+#include "../Core/NetworkPacket.h"
+#include "../Core/Singleton.h"
+#include "../Core/MutexVector.h"
 #include <qobject.h>
 
 namespace Network

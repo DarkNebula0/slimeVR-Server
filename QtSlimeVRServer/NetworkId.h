@@ -2,9 +2,8 @@
 #include <type_traits>
 #include <atomic>
 #include "Defines.h"
-#include "Global.h"
 #include "BaseServer.h"
-#include "MutexVector.h"
+#include "../Core/MutexVector.h"
 #include <QHostAddress>
 
 namespace Network
