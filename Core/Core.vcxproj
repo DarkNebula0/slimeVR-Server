@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AttitudeEestimator.h" />
     <ClInclude Include="CharArray.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="GlobalExceptionUtils.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AttitudeEestimator.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>

@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -17,178 +13,182 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
-    <Filter Include="Source Files\Network">
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\Network">
       <UniqueIdentifier>{ac3fc055-3b39-4b96-b4c8-54b2c54be801}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\Packet">
+    <Filter Include="Source\Network\Packet">
       <UniqueIdentifier>{6c416f00-f19c-4d6f-9903-34d9517bc50c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\PacketHandler">
+    <Filter Include="Source\Network\PacketHandler">
       <UniqueIdentifier>{644e6761-ab56-4c9a-8572-e415ec7e4d05}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Utils">
-      <UniqueIdentifier>{c0a55645-aa85-48b0-a572-fc44a3d2feb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\Session">
-      <UniqueIdentifier>{04e2b356-2ab5-4d5e-b0fb-d740617b0af1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\TrackerServerHandler">
+    <Filter Include="Source\Network\PacketHandler\TrackerServerHandler">
       <UniqueIdentifier>{c9f8483d-4cd9-4d46-a1fe-4c23f6f5c84e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\Server">
-      <UniqueIdentifier>{7ca5088c-4d5e-4208-9b8f-5ca4c9cbc911}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\Server\TrackerServer">
-      <UniqueIdentifier>{0846e0eb-6928-4875-8a6e-b3a0a19fecca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet">
+    <Filter Include="Source\Network\PacketHandler\Packet">
       <UniqueIdentifier>{bedcad96-bf59-4e98-9999-b18c332da8ec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive">
+    <Filter Include="Source\Network\PacketHandler\Packet\Receive">
       <UniqueIdentifier>{8c82ebdf-f637-4517-8616-f7c3de9b0917}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Send">
-      <UniqueIdentifier>{7918271d-fe81-4bbc-8ab6-a88c2fec7361}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Data">
-      <UniqueIdentifier>{24a4d8cf-a6c8-467d-9211-0cd9a44e9b84}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Data\Tracker">
-      <UniqueIdentifier>{be179dbb-ef46-4e4d-80b0-853be876fd2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\Broadcast">
+    <Filter Include="Source\Network\PacketHandler\Packet\Receive\Broadcast">
       <UniqueIdentifier>{1e184ff5-5d68-471f-927a-976f8c338b9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\Info">
+    <Filter Include="Source\Network\PacketHandler\Packet\Receive\Info">
       <UniqueIdentifier>{da32597b-a9b4-4f7d-bb1b-8bd72ff525f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Send\Info">
-      <UniqueIdentifier>{7bba03d4-3a44-430b-b6d9-ece1425a47a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Send\Broadcast">
-      <UniqueIdentifier>{18cf1b1f-7d29-4822-822b-353cbe408d37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\UI">
-      <UniqueIdentifier>{af3a54ce-453d-4ea0-a8d9-a85bbab0d83f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SideTasks">
-      <UniqueIdentifier>{d6f6ee94-f26f-4b7c-9f15-7eff0a0a8fc3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network\PacketHandler\Packet\Receive\SensorData">
+    <Filter Include="Source\Network\PacketHandler\Packet\Receive\SensorData">
       <UniqueIdentifier>{d364f7e7-a7a5-484f-9f67-7c9a9a71b7ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Utils\Logger">
+    <Filter Include="Source\Network\PacketHandler\Packet\Send">
+      <UniqueIdentifier>{7918271d-fe81-4bbc-8ab6-a88c2fec7361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network\PacketHandler\Packet\Send\Info">
+      <UniqueIdentifier>{7bba03d4-3a44-430b-b6d9-ece1425a47a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network\PacketHandler\Packet\Send\Broadcast">
+      <UniqueIdentifier>{18cf1b1f-7d29-4822-822b-353cbe408d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network\Session">
+      <UniqueIdentifier>{04e2b356-2ab5-4d5e-b0fb-d740617b0af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network\Server">
+      <UniqueIdentifier>{7ca5088c-4d5e-4208-9b8f-5ca4c9cbc911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network\Server\TrackerServer">
+      <UniqueIdentifier>{0846e0eb-6928-4875-8a6e-b3a0a19fecca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils">
+      <UniqueIdentifier>{c0a55645-aa85-48b0-a572-fc44a3d2feb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils\Logger">
       <UniqueIdentifier>{6d167f03-2b1e-4118-bddf-db9573de1187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Data">
+      <UniqueIdentifier>{24a4d8cf-a6c8-467d-9211-0cd9a44e9b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Data\Tracker">
+      <UniqueIdentifier>{be179dbb-ef46-4e4d-80b0-853be876fd2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI">
+      <UniqueIdentifier>{af3a54ce-453d-4ea0-a8d9-a85bbab0d83f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\SideTasks">
+      <UniqueIdentifier>{d6f6ee94-f26f-4b7c-9f15-7eff0a0a8fc3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
     <ClCompile Include="TrackerSession.cpp">
-      <Filter>Source Files\Network\Session</Filter>
+      <Filter>Source\Network\Session</Filter>
     </ClCompile>
     <ClCompile Include="TrackerPacketHandler.cpp">
-      <Filter>Source Files\Network\PacketHandler\TrackerServerHandler</Filter>
+      <Filter>Source\Network\PacketHandler\TrackerServerHandler</Filter>
     </ClCompile>
     <ClCompile Include="TrackerServer.cpp">
-      <Filter>Source Files\Network\Server\TrackerServer</Filter>
+      <Filter>Source\Network\Server\TrackerServer</Filter>
     </ClCompile>
     <ClCompile Include="Tracker.cpp">
-      <Filter>Source Files\Data\Tracker</Filter>
+      <Filter>Source\Data\Tracker</Filter>
     </ClCompile>
     <ClCompile Include="Broadcast.cpp">
-      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Broadcast</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Receive\Broadcast</Filter>
     </ClCompile>
     <ClCompile Include="Info.cpp">
-      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Info</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Receive\Info</Filter>
     </ClCompile>
     <ClCompile Include="InfoSend.cpp">
-      <Filter>Source Files\Network\PacketHandler\Packet\Send\Info</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Send\Info</Filter>
     </ClCompile>
     <ClCompile Include="BroadcastSend.cpp">
-      <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Send\Broadcast</Filter>
     </ClCompile>
     <ClCompile Include="Gui.cpp">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source\UI</Filter>
     </ClCompile>
     <ClCompile Include="SideTasks.cpp">
-      <Filter>Source Files\SideTasks</Filter>
+      <Filter>Source\SideTasks</Filter>
     </ClCompile>
     <ClCompile Include="SideTasksController.cpp">
-      <Filter>Source Files\SideTasks</Filter>
+      <Filter>Source\SideTasks</Filter>
     </ClCompile>
     <ClCompile Include="SensorData.cpp">
-      <Filter>Source Files\Network\PacketHandler\Packet\Receive\SensorData</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
-      <Filter>Source Files\Utils\Logger</Filter>
+      <Filter>Source\Utils\Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="TrackerPacket.h">
-      <Filter>Source Files\Network\Packet</Filter>
+      <Filter>Source\Network\Packet</Filter>
     </ClInclude>
     <ClInclude Include="BasePacketHandler.h">
-      <Filter>Source Files\Network\PacketHandler</Filter>
+      <Filter>Source\Network\PacketHandler</Filter>
     </ClInclude>
     <ClInclude Include="TrackerSession.h">
-      <Filter>Source Files\Network\Session</Filter>
+      <Filter>Source\Network\Session</Filter>
     </ClInclude>
     <ClInclude Include="TrackerPacketHandler.h">
-      <Filter>Source Files\Network\PacketHandler\TrackerServerHandler</Filter>
+      <Filter>Source\Network\PacketHandler\TrackerServerHandler</Filter>
     </ClInclude>
     <ClInclude Include="BaseServer.h">
-      <Filter>Source Files\Network\Server</Filter>
+      <Filter>Source\Network\Server</Filter>
     </ClInclude>
     <ClInclude Include="NetworkId.h">
-      <Filter>Source Files\Network\Session</Filter>
+      <Filter>Source\Network\Session</Filter>
     </ClInclude>
     <ClInclude Include="TrackerServer.h">
-      <Filter>Source Files\Network\Server\TrackerServer</Filter>
+      <Filter>Source\Network\Server\TrackerServer</Filter>
     </ClInclude>
     <ClInclude Include="Tracker.h">
-      <Filter>Source Files\Data\Tracker</Filter>
+      <Filter>Source\Data\Tracker</Filter>
     </ClInclude>
     <ClInclude Include="Broadcast.h">
-      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Broadcast</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Receive\Broadcast</Filter>
     </ClInclude>
     <ClInclude Include="Info.h">
-      <Filter>Source Files\Network\PacketHandler\Packet\Receive\Info</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Receive\Info</Filter>
     </ClInclude>
     <ClInclude Include="InfoSend.h">
-      <Filter>Source Files\Network\PacketHandler\Packet\Send\Info</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Send\Info</Filter>
     </ClInclude>
     <ClInclude Include="BroadcastSend.h">
-      <Filter>Source Files\Network\PacketHandler\Packet\Send\Broadcast</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Send\Broadcast</Filter>
     </ClInclude>
     <ClInclude Include="SensorData.h">
-      <Filter>Source Files\Network\PacketHandler\Packet\Receive\SensorData</Filter>
+      <Filter>Source\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClInclude>
     <ClInclude Include="Logger.h">
-      <Filter>Source Files\Utils\Logger</Filter>
+      <Filter>Source\Utils\Logger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Gui.h">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source\UI</Filter>
     </QtMoc>
     <QtMoc Include="SideTasks.h">
-      <Filter>Source Files\SideTasks</Filter>
+      <Filter>Source\SideTasks</Filter>
     </QtMoc>
     <QtMoc Include="SideTasksController.h">
-      <Filter>Source Files\SideTasks</Filter>
+      <Filter>Source\SideTasks</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <None Include="main.qml">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source\UI</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -44,5 +44,6 @@ void Network::Packet::TrackerServer::CHandler::initialize()
 	grOperation.fnFunction = &SensorData::Packet::TrackerServer::RotationDataRequest;
 	AddOperation();
 
+
 	LOGI("[TrackerServer] Packet initialized");
 }

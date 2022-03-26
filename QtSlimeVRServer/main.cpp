@@ -28,12 +28,15 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    // Load gui context
+    engine.rootContext()->setContextProperty("_gui", GuiInstance);
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    CGui oGuiClass;
-    engine.rootContext()->setContextProperty("_gui", &oGuiClass);
+   
 
     // Load server
     TrackerServerInstance->initialize(QHostAddress::Any, UDP_PORT);

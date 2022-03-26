@@ -32,6 +32,9 @@
     <Filter Include="Source\Utils\Global">
       <UniqueIdentifier>{92f36cc8-ba4f-4458-b21b-a9b59636c647}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Utils\AttitudeEestimator">
+      <UniqueIdentifier>{9b1ac619-821c-47c8-9428-6f2445a079b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mutex.h">
@@ -73,6 +76,9 @@
     <ClInclude Include="CharArray.h">
       <Filter>Source\Utils\DataWrapper</Filter>
     </ClInclude>
+    <ClInclude Include="AttitudeEestimator.h">
+      <Filter>Source\Utils\AttitudeEestimator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Timer.cpp">
@@ -80,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="ThreadPool.cpp">
       <Filter>Source\Utils\ThreadPool</Filter>
+    </ClCompile>
+    <ClCompile Include="AttitudeEestimator.cpp">
+      <Filter>Source\Utils\AttitudeEestimator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

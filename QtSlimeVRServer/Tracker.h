@@ -2,6 +2,7 @@
 
 #include <string>
 #include "../Core/CharArray.h"
+#include "../Core/Timer.h"
 
 class CTracker
 {
@@ -12,6 +13,7 @@ public:
 	enum class EImu : uint32_t {
 		NONE = 0x00,
 		IMU_ICM20948 = 0x01,
+		IMU_MPU6050 = 0x02,
 	};
 
 	enum class EEmuState : uint8_t {

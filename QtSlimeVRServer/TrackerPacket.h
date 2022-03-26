@@ -17,6 +17,7 @@ namespace Network
                     RSSI = 0x03,
                     SensorState= 0x04,
                     RotationData = 0x05,
+                    RawSensorData = 0x06,
                 };
 
                 struct SHeartBeat : SPacketHeader<SHeartBeat, EID::HeartBeat> {
@@ -44,6 +45,7 @@ namespace Network
                     double dX;
                     double dY;
                     double dZ;
+                    double dW;
                 };
                 
             }
