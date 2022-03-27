@@ -28,6 +28,11 @@ void VRDriver::CBridge::initialize()
     GOOGLE_PROTOBUF_VERIFY_VERSION;
 }
 
+void VRDriver::CBridge::update()
+{
+
+}
+
 VRDriver::EBridgeState VRDriver::CBridge::reset()
 {
     this->close();

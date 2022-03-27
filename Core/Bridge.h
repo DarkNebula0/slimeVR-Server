@@ -27,6 +27,7 @@ namespace VRDriver {
 		}
 	public:
 		void initialize();
+		void update();
 		EBridgeState open();
 		EBridgeState close();
 		EBridgeState reset();
