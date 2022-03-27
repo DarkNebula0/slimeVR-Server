@@ -10,7 +10,15 @@ VRDriver::EBridgeState VRDriver::CBridge::open()
         return EBridgeState::Connected;
     }
 
-    this->m_pPipeHandle = CreateFileA("\\\\.\\pipe\\SlimeVRInput", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+    this->m_pPipeHandle = CreateNamedPipeA("\\\\.\\pipe\\SlimeVRDriver",
+        PIPE_ACCESS_DUPLEX,
+        PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT,
+        1,
+        1024 * 16,
+        1024 * 16,
+        NMPWAIT_USE_DEFAULT_WAIT,
+        nullptr);
+
     this->m_eState = this->m_pPipeHandle != INVALID_HANDLE_VALUE ? EBridgeState::Connected : EBridgeState::Error;
     return this->m_eState;
 }
