@@ -4,3 +4,4 @@
 [submodule "DevelLib"]
 	path = DevelLib
 	url = https://github.com/DarkNebula0/devel-lib.git
+	ignore = dirty
