@@ -14,6 +14,7 @@
 **/x64/
 **/.vs/
 **/enc_temp_folder/
+**/external/mysql
 
 # Qt-es
 object_script.*.Release

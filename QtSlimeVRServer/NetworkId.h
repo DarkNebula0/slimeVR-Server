@@ -3,7 +3,7 @@
 #include <atomic>
 #include "Defines.h"
 #include "BaseServer.h"
-#include "../Core/MutexVector.h"
+#include <library/MutexVector.h>
 #include <QHostAddress>
 
 namespace Network

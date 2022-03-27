@@ -2,9 +2,9 @@
 #include "NetworkId.h"
 #include "BaseServer.h"
 #include "TrackerSession.h"
-#include "../Core/NetworkPacket.h"
-#include "../Core/Singleton.h"
-#include "../Core/MutexVector.h"
+#include <library/Singleton.h>
+#include <library/MutexVector.h>
+#include <library/NetworkPacket.h>
 #include <qobject.h>
 
 namespace Network

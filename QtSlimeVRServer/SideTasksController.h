@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Core/Singleton.h"
+#include <library/Singleton.h>
 #include <QObject>
 
 class QThread;

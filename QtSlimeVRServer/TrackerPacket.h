@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Core/PacketBase.h"
-#include "../Core/CharArray.h"
+#include <library/CharArray.h>
 
 namespace Network
 {

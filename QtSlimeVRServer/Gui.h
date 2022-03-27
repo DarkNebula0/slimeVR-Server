@@ -3,7 +3,7 @@
 #include <QObject>
 #include <QString>
 #include <Qt3DCore>
-#include "../Core/Singleton.h"
+#include <library/Singleton.h>
 
 class CGui : public QObject, public CSingleton<CGui>
 {

@@ -2,9 +2,9 @@
 #include "Defines.h"
 #include "NetworkId.h"
 #include "Tracker.h"
-#include "../Core/Timer.h"
-#include "../Core/NetworkPacket.h"
 
+#include <library/CharArray.h>
+#include <library/NetworkPacket.h>
 #include <memory>
 #include <QUdpSocket>
 

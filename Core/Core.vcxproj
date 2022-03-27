@@ -72,15 +72,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\DevelLib\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\DevelLib\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\DevelLib\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\DevelLib\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -154,24 +158,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AttitudeEestimator.h" />
-    <ClInclude Include="CharArray.h" />
-    <ClInclude Include="Global.h" />
-    <ClInclude Include="GlobalExceptionUtils.h" />
-    <ClInclude Include="LockGuard.h" />
-    <ClInclude Include="Mutex.h" />
-    <ClInclude Include="MutexVector.h" />
-    <ClInclude Include="NetworkPacket.h" />
     <ClInclude Include="PacketBase.h" />
-    <ClInclude Include="SafeQueue.h" />
-    <ClInclude Include="Singleton.h" />
-    <ClInclude Include="StringUtils.h" />
-    <ClInclude Include="ThreadPool.h" />
-    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AttitudeEestimator.cpp" />
-    <ClCompile Include="ThreadPool.cpp" />
-    <ClCompile Include="Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DevelLib\library\Library.vcxproj">
+      <Project>{0a31b6b1-aa02-444c-b969-d93f2c76da53}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

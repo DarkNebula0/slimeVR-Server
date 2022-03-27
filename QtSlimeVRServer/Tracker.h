@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include "../Core/CharArray.h"
-#include "../Core/Timer.h"
+#include <library/CharArray.h>
+#include <library/Timer.h>
 
 class CTracker
 {

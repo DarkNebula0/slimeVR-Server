@@ -11,82 +11,19 @@
     <Filter Include="Source\Utils">
       <UniqueIdentifier>{f617ea73-6782-4c0b-8925-8698391a2fed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Utils\Singleton">
-      <UniqueIdentifier>{d14058e9-b6c4-4b63-b726-97dfdde9fbc9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\Packet">
-      <UniqueIdentifier>{ce953f01-9e87-4008-8691-7ee4dba9c055}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\ThreadPool">
-      <UniqueIdentifier>{75723261-8347-403b-9744-d70f04490925}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\Timer">
-      <UniqueIdentifier>{0e3d2d22-7686-419f-8684-31931c5e473b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\DataWrapper">
-      <UniqueIdentifier>{a17e15cc-5a1b-4c16-adfa-0ec3d5f7fc9d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\Mutex">
-      <UniqueIdentifier>{de15ddef-f1ac-4f19-bbcb-e7a90d4ed258}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\Global">
-      <UniqueIdentifier>{92f36cc8-ba4f-4458-b21b-a9b59636c647}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Utils\AttitudeEestimator">
       <UniqueIdentifier>{9b1ac619-821c-47c8-9428-6f2445a079b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mutex.h">
-      <Filter>Source\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="MutexVector.h">
-      <Filter>Source\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="LockGuard.h">
-      <Filter>Source\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Source\Utils\Timer</Filter>
-    </ClInclude>
-    <ClInclude Include="ThreadPool.h">
-      <Filter>Source\Utils\ThreadPool</Filter>
-    </ClInclude>
-    <ClInclude Include="PacketBase.h">
-      <Filter>Source\Utils\Packet</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkPacket.h">
-      <Filter>Source\Utils\Packet</Filter>
-    </ClInclude>
-    <ClInclude Include="SafeQueue.h">
-      <Filter>Source\Utils\Mutex</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Source\Utils\Singleton</Filter>
-    </ClInclude>
-    <ClInclude Include="GlobalExceptionUtils.h">
-      <Filter>Source\Utils\Global</Filter>
-    </ClInclude>
-    <ClInclude Include="Global.h">
-      <Filter>Source\Utils\Global</Filter>
-    </ClInclude>
-    <ClInclude Include="StringUtils.h">
-      <Filter>Source\Utils\Global</Filter>
-    </ClInclude>
-    <ClInclude Include="CharArray.h">
-      <Filter>Source\Utils\DataWrapper</Filter>
-    </ClInclude>
     <ClInclude Include="AttitudeEestimator.h">
       <Filter>Source\Utils\AttitudeEestimator</Filter>
     </ClInclude>
+    <ClInclude Include="PacketBase.h">
+      <Filter>Source\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source\Utils\Timer</Filter>
-    </ClCompile>
-    <ClCompile Include="ThreadPool.cpp">
-      <Filter>Source\Utils\ThreadPool</Filter>
-    </ClCompile>
     <ClCompile Include="AttitudeEestimator.cpp">
       <Filter>Source\Utils\AttitudeEestimator</Filter>
     </ClCompile>
