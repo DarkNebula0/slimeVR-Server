@@ -2,7 +2,7 @@
 #include "TrackerPacket.h"
 #include "Tracker.h"
 #include "InfoSend.h"
-#include "Logger.h"
+#include <library/Logger.h>
 #include "Defines.h"
 
 using namespace Network::Packet::TrackerPacket::Receive;

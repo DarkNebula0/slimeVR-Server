@@ -62,12 +62,6 @@
     <Filter Include="Source\Network\Server\TrackerServer">
       <UniqueIdentifier>{0846e0eb-6928-4875-8a6e-b3a0a19fecca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Utils">
-      <UniqueIdentifier>{c0a55645-aa85-48b0-a572-fc44a3d2feb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\Logger">
-      <UniqueIdentifier>{6d167f03-2b1e-4118-bddf-db9573de1187}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Data">
       <UniqueIdentifier>{24a4d8cf-a6c8-467d-9211-0cd9a44e9b84}</UniqueIdentifier>
     </Filter>
@@ -124,9 +118,6 @@
     <ClCompile Include="SensorData.cpp">
       <Filter>Source\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Source\Utils\Logger</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -170,9 +161,6 @@
     </ClInclude>
     <ClInclude Include="SensorData.h">
       <Filter>Source\Network\PacketHandler\Packet\Receive\SensorData</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Source\Utils\Logger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

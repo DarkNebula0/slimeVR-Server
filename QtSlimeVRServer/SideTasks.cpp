@@ -1,6 +1,6 @@
 #include "SideTasks.h"
 #include "Defines.h"
-#include "Logger.h"
+#include <library/Logger.h>
 #include <QThread>
 #include "TrackerServer.h"
 

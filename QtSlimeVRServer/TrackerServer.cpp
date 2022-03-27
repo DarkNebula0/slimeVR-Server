@@ -2,7 +2,7 @@
 #include "Defines.h"
 #include "TrackerPacket.h"
 #include "TrackerPacketHandler.h"
-#include "Logger.h"
+#include <library/Logger.h>
 #include "InfoSend.h"
 
 #include <QUdpSocket>

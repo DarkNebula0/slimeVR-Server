@@ -7,9 +7,10 @@
 #include "SideTasksController.h"
 #include "Gui.h"
 
+#include "../Core/Bridge.h"
+
 #if defined(Q_OS_WIN)
 #include <Windows.h>
-#include "Logger.h"
 #endif
 
 int main(int argc, char *argv[])
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
             freopen("CONOUT$", "w", stderr);
         }
 
+    Logger::Initialize();
     Logger::SetTitle(CONSOLE_TITLE);
 #endif
 
@@ -37,10 +39,13 @@ int main(int argc, char *argv[])
         return -1;
 
    
-
     // Load server
     TrackerServerInstance->initialize(QHostAddress::Any, UDP_PORT);
 
+    // Init vr diver bridge
+    BridgeInstance->initialize();
+
+    // Start side tasks
     SideTaskControllerInstance->start();
 
     return app.exec();

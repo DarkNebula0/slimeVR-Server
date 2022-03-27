@@ -1,6 +1,6 @@
 #pragma once
 #include "Defines.h"
-#include "Logger.h"
+#include <library/Logger.h>
 #include "../Core/PacketBase.h"
 #include <library/ThreadPool.h>
 #include <library/NetworkPacket.h>

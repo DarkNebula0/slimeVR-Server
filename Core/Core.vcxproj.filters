@@ -14,6 +14,12 @@
     <Filter Include="Source\Utils\AttitudeEestimator">
       <UniqueIdentifier>{9b1ac619-821c-47c8-9428-6f2445a079b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\ProtoBuf">
+      <UniqueIdentifier>{da63d3b3-96f8-430b-90e1-8e4b8b51642d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VRDriver">
+      <UniqueIdentifier>{78e24e79-8f39-478b-be44-a99df74fff41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AttitudeEestimator.h">
@@ -22,10 +28,27 @@
     <ClInclude Include="PacketBase.h">
       <Filter>Source\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="ProtobufMessages.pb.h">
+      <Filter>Source\ProtoBuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge.h">
+      <Filter>Source\VRDriver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AttitudeEestimator.cpp">
       <Filter>Source\Utils\AttitudeEestimator</Filter>
     </ClCompile>
+    <ClCompile Include="ProtobufMessages.pb.cc">
+      <Filter>Source\ProtoBuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge.cpp">
+      <Filter>Source\VRDriver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ProtobufMessages.proto">
+      <Filter>Source\ProtoBuf</Filter>
+    </None>
   </ItemGroup>
 </Project>

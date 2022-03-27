@@ -1,5 +1,6 @@
 #pragma once
 #include <library/Global.h>
+#include <library/Logger.h>
 
 #define CheckPacket(Packet, xStruct) if (Packet.size() < sizeof(xStruct)) return;
 #define BroadcastStruct(xStruct) (TrackerServerInstance->broadcast(reinterpret_cast<const char*>(&xStruct), xStruct.length()))

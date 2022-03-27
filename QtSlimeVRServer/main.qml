@@ -13,20 +13,53 @@ Window {
 
     Button {
         id: button_pair_tracker
-        y: 66
+        y: 59
         width: 164
         height: 24
         text: qsTr("Pair Trackers")
+        anchors.horizontalCenterOffset: -183
         anchors.horizontalCenter: parent.horizontalCenter
         flat: false
-        onClicked: _gui.buttonClicked()
+        onClicked: _gui.pairTracker()
+    }
+
+    Button {
+        id: button_connect_bridge
+        y: 100
+        width: 164
+        height: 24
+        text: qsTr("Connect to bridge")
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: -183
+        enabled: (_gui?.nBridgeState ?? 0) !== 1
+        flat: false
+        onClicked: _gui.connectToBridge()
+    }
+
+    Text {
+        id: text1
+        x: 324
+        y: 51
+        color: "#ffffff"
+        text: qsTr("Bridge Status:")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: text_bridge_state
+        x: 409
+        y: 51
+        color: "#ffffff"
+        text: [qsTr("Disconnected"), qsTr("Connected"), qsTr("Error")][_gui?.nBridgeState ?? 0]
+        font.pixelSize: 12
     }
 
     View3D {
         id: view3D
-        y: 110
-        width: 355
-        height: 331
+        y: 206
+        width: 281
+        height: 255
+        anchors.horizontalCenterOffset: 1
         anchors.horizontalCenter: parent.horizontalCenter
         SceneEnvironment {
             id: sceneEnvironment

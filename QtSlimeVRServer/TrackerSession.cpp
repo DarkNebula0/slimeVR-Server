@@ -1,7 +1,7 @@
 #include "TrackerSession.h"
 #include "TrackerServer.h"
 #include "Defines.h"
-#include "Logger.h"
+#include <library/Logger.h>
 
 void Network::TrackerServer::CSession::close()
 {
