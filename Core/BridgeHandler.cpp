@@ -34,7 +34,7 @@ void VRDriver::CBridgeHandler::closePool()
 	}
 }
 
-void VRDriver::CBridgeHandler::addTask(const messages::ProtobufMessage& i_oMessage)
+void VRDriver::CBridgeHandler::addTask(messages::ProtobufMessage& i_oMessage)
 {
 	if (this->m_pPool)
 	{
@@ -49,7 +49,7 @@ void VRDriver::CBridgeHandler::handle(const messages::ProtobufMessage& i_oMessag
 	const auto& fnFunction = this->m_afnPacket[nMsgId];
 	if (fnFunction)
 	{
-		fnFunction(messages::ProtobufMessage(i_oMessage));
+		fnFunction(&i_oMessage);
 	}
 	else
 	{

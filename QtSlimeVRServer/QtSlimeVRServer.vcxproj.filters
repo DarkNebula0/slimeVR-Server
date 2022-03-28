@@ -72,6 +72,9 @@
     <Filter Include="Source\VRDriver\MessageHandler">
       <UniqueIdentifier>{78707d35-368b-44ed-9108-2092c982ae0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\VRDriver\Messages">
+      <UniqueIdentifier>{f81c1240-b6ce-4fd5-8b91-d7b44ad60782}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -119,6 +122,9 @@
     <ClCompile Include="MessageHandler.cpp">
       <Filter>Source\VRDriver\MessageHandler</Filter>
     </ClCompile>
+    <ClCompile Include="Messages.cpp">
+      <Filter>Source\VRDriver\Messages</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -165,6 +171,9 @@
     </ClInclude>
     <ClInclude Include="MessageHandler.h">
       <Filter>Source\VRDriver\MessageHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages.h">
+      <Filter>Source\VRDriver\Messages</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

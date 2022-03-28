@@ -8,7 +8,7 @@
 
 class CThreadPool;
 namespace VRDriver {
-	using fnFunctionBase = std::function<void(const messages::ProtobufMessage&)>;
+	using fnFunctionBase = std::function<void(const messages::ProtobufMessage *)>;
 	class CBridgeHandler: public CSingleton<CBridgeHandler>
 	{
 		friend CSingleton<CBridgeHandler>;
@@ -23,9 +23,9 @@ namespace VRDriver {
 	public:
 		void createPool(const size_t i_nWorkerCount);
 		void closePool();
-		void addTask(const messages::ProtobufMessage& i_oMessage);
+		void addTask(messages::ProtobufMessage& i_oMessage);
 	public:
-		_inline void addMessageOperation(uint32_t i_nId, fnFunctionBase &i_fnHandler)
+		_inline void addMessageOperation(uint32_t i_nId, fnFunctionBase i_fnHandler)
 		{
 			this->m_afnPacket[i_nId] = std::move(i_fnHandler);
 		}

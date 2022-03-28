@@ -103,6 +103,7 @@
     <ClCompile Include="InfoSend.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
+    <ClCompile Include="Messages.cpp" />
     <ClCompile Include="SensorData.cpp" />
     <ClCompile Include="SideTasks.cpp" />
     <ClCompile Include="SideTasksController.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="Info.h" />
     <ClInclude Include="InfoSend.h" />
     <ClInclude Include="MessageHandler.h" />
+    <ClInclude Include="Messages.h" />
     <ClInclude Include="NetworkId.h" />
     <QtMoc Include="SideTasks.h" />
     <QtMoc Include="SideTasksController.h" />
