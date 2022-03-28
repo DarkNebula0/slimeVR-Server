@@ -1,17 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Translation Files">
-      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
-      <Extensions>ts</Extensions>
     </Filter>
     <Filter Include="Source">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
@@ -74,6 +66,12 @@
     <Filter Include="Source\SideTasks">
       <UniqueIdentifier>{d6f6ee94-f26f-4b7c-9f15-7eff0a0a8fc3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\VRDriver">
+      <UniqueIdentifier>{8f6b6b34-f4bd-4167-ae26-65d002cd7641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VRDriver\MessageHandler">
+      <UniqueIdentifier>{78707d35-368b-44ed-9108-2092c982ae0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -118,6 +116,9 @@
     <ClCompile Include="SensorData.cpp">
       <Filter>Source\Network\PacketHandler\Packet\Receive\SensorData</Filter>
     </ClCompile>
+    <ClCompile Include="MessageHandler.cpp">
+      <Filter>Source\VRDriver\MessageHandler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -161,6 +162,9 @@
     </ClInclude>
     <ClInclude Include="SensorData.h">
       <Filter>Source\Network\PacketHandler\Packet\Receive\SensorData</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHandler.h">
+      <Filter>Source\VRDriver\MessageHandler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

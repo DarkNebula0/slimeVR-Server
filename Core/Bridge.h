@@ -1,8 +1,9 @@
 #pragma once
 
-#include <library/Singleton.h>
-#include <Windows.h>
 #include "ProtobufMessages.pb.h"
+#include <Windows.h>
+#include <library/Singleton.h>
+#include <library/Mutex.h>
 
 namespace VRDriver {
 
@@ -21,6 +22,7 @@ namespace VRDriver {
 	private:
 		HANDLE m_pPipeHandle;
 		EBridgeState m_eState;
+		CMutex m_oMutex;
 	public:
 		__inline EBridgeState state() {
 			return this->m_eState;

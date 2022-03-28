@@ -159,12 +159,16 @@
   <ItemGroup>
     <ClInclude Include="AttitudeEestimator.h" />
     <ClInclude Include="Bridge.h" />
+    <ClInclude Include="BridgeHandler.h" />
+    <ClInclude Include="BridgeSend.h" />
     <ClInclude Include="PacketBase.h" />
     <ClInclude Include="ProtobufMessages.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AttitudeEestimator.cpp" />
     <ClCompile Include="Bridge.cpp" />
+    <ClCompile Include="BridgeHandler.cpp" />
+    <ClCompile Include="BridgeSend.cpp" />
     <ClCompile Include="ProtobufMessages.pb.cc" />
   </ItemGroup>
   <ItemGroup>

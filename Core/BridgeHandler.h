@@ -23,6 +23,7 @@ namespace VRDriver {
 	public:
 		void createPool(const size_t i_nWorkerCount);
 		void closePool();
+		void addTask(const messages::ProtobufMessage& i_oMessage);
 	public:
 		_inline void addMessageOperation(uint32_t i_nId, fnFunctionBase &i_fnHandler)
 		{
@@ -30,3 +31,5 @@ namespace VRDriver {
 		}
 	};
 }
+
+extern VRDriver::CBridgeHandler* BridgeMessageHandlerInstance;

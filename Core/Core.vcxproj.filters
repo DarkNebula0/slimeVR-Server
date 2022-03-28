@@ -20,6 +20,15 @@
     <Filter Include="Source\VRDriver">
       <UniqueIdentifier>{78e24e79-8f39-478b-be44-a99df74fff41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\VRDriver\Bridge">
+      <UniqueIdentifier>{777de70a-f3c5-4367-adee-ba51ca4c5001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VRDriver\BridgeHandler">
+      <UniqueIdentifier>{36b25b49-3bf4-47b5-a0a5-32a539e2fa86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VRDriver\BridgeSend">
+      <UniqueIdentifier>{f724a2fb-ae0a-467d-9a41-f83696111a7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AttitudeEestimator.h">
@@ -31,8 +40,14 @@
     <ClInclude Include="ProtobufMessages.pb.h">
       <Filter>Source\ProtoBuf</Filter>
     </ClInclude>
+    <ClInclude Include="BridgeHandler.h">
+      <Filter>Source\VRDriver\BridgeHandler</Filter>
+    </ClInclude>
     <ClInclude Include="Bridge.h">
-      <Filter>Source\VRDriver</Filter>
+      <Filter>Source\VRDriver\Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="BridgeSend.h">
+      <Filter>Source\VRDriver\BridgeSend</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -42,8 +57,14 @@
     <ClCompile Include="ProtobufMessages.pb.cc">
       <Filter>Source\ProtoBuf</Filter>
     </ClCompile>
+    <ClCompile Include="BridgeHandler.cpp">
+      <Filter>Source\VRDriver\BridgeHandler</Filter>
+    </ClCompile>
     <ClCompile Include="Bridge.cpp">
-      <Filter>Source\VRDriver</Filter>
+      <Filter>Source\VRDriver\Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="BridgeSend.cpp">
+      <Filter>Source\VRDriver\BridgeSend</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

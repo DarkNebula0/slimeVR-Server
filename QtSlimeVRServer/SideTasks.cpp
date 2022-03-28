@@ -3,7 +3,7 @@
 #include <library/Logger.h>
 #include <QThread>
 #include "TrackerServer.h"
-
+#include "MessageHandler.h"
 
 CSideTasks::CSideTasks()
 	:  m_bHasStopRequest(false)
@@ -22,6 +22,9 @@ void CSideTasks::operate()
 
 		// Remove disconnected clients
 		TrackerServerInstance->handleDisconnectedClients();
+
+		// Cehck for new msg from OpenVR bridge
+		MessageHandlerInstance->handleTasks();
 
 		QThread::msleep(SIDE_TASK_THREAD_DELAY_MS);
 	}

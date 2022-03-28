@@ -1,4 +1,6 @@
 #include "Bridge.h"
+#include <library/LockGuard.h>
+#include <library/Global.h>
 
 VRDriver::CBridge* BridgeInstance = VRDriver::CBridge::instance();
 
@@ -30,7 +32,6 @@ void VRDriver::CBridge::initialize()
 
 void VRDriver::CBridge::update()
 {
-
 }
 
 VRDriver::EBridgeState VRDriver::CBridge::reset()
@@ -57,7 +58,9 @@ bool VRDriver::CBridge::getNextMessage(messages::ProtobufMessage* i_pMsg)
         uint32_t nSize = 0;
         bool newData = false;
 
-        if (PeekNamedPipe(this->m_pPipeHandle, &nSize, 4, &nBytesRead, nullptr, nullptr) && i_pMsg) {
+        RecursiveLockGuard(this->m_oMutex);
+
+        if (PeekNamedPipe(this->m_pPipeHandle, &nSize, 4, &nBytesRead, nullptr, nullptr) && i_pMsg && nSize > 4) {
             char* pBuffer = new char[nSize];
 
             if (ReadFile(this->m_pPipeHandle, pBuffer, nSize, &nBytesRead, nullptr)) {
@@ -75,6 +78,10 @@ bool VRDriver::CBridge::getNextMessage(messages::ProtobufMessage* i_pMsg)
 
 bool VRDriver::CBridge::sendMessage(messages::ProtobufMessage* i_pMsg)
 {
+    if (this->m_eState != EBridgeState::Connected) {
+        return false;
+    }
+
     DWORD nSend = 0;
 
     if (this->m_pPipeHandle != INVALID_HANDLE_VALUE) {
@@ -87,7 +94,7 @@ bool VRDriver::CBridge::sendMessage(messages::ProtobufMessage* i_pMsg)
             *reinterpret_cast<uint32_t*>(pBuffer) = nSize;
 
             if (i_pMsg->SerializeToArray(pBuffer + 4, i_pMsg->ByteSizeLong())) {
-               
+                RecursiveLockGuard(this->m_oMutex);
                 if (!WriteFile(this->m_pPipeHandle, pBuffer, nSize, &nSend, nullptr)) {
                     this->m_eState = EBridgeState::Error;
                 }

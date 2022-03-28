@@ -3,6 +3,7 @@
 #include "BroadcastSend.h"
 #include <library/Logger.h>
 #include "../Core/Bridge.h"
+#include "../Core/BridgeSend.h"
 
 CGui* GuiInstance = CGui::instance();
 
@@ -28,6 +29,8 @@ void CGui::connectToBridge()
 {
 	BridgeInstance->open();
 	this->updateBrdigeState();
+
+	VRDriver::BridgeSend::sendTrackerAdded(1, "Teststeasteastwasdt", 3);
 }
 
 

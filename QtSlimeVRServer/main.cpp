@@ -8,6 +8,7 @@
 #include "Gui.h"
 
 #include "../Core/Bridge.h"
+#include "MessageHandler.h"
 
 #if defined(Q_OS_WIN)
 #include <Windows.h>
@@ -44,6 +45,9 @@ int main(int argc, char *argv[])
 
     // Init vr diver bridge
     BridgeInstance->initialize();
+
+    // Init vr bridge msg handler
+    MessageHandlerInstance->initialize();
 
     // Start side tasks
     SideTaskControllerInstance->start();
