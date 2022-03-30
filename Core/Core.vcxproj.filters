@@ -1,44 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Ressourcendateien">
+    <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
     </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{0f749bac-5a13-493b-81fa-5091a43f2bc9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils">
-      <UniqueIdentifier>{f617ea73-6782-4c0b-8925-8698391a2fed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Utils\AttitudeEestimator">
-      <UniqueIdentifier>{9b1ac619-821c-47c8-9428-6f2445a079b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\ProtoBuf">
-      <UniqueIdentifier>{da63d3b3-96f8-430b-90e1-8e4b8b51642d}</UniqueIdentifier>
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Source\VRDriver">
-      <UniqueIdentifier>{78e24e79-8f39-478b-be44-a99df74fff41}</UniqueIdentifier>
+      <UniqueIdentifier>{d152ab62-6622-4cf0-8787-1dd18eb2198c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\VRDriver\Bridge">
-      <UniqueIdentifier>{777de70a-f3c5-4367-adee-ba51ca4c5001}</UniqueIdentifier>
+      <UniqueIdentifier>{dc5c82b4-83e1-49e7-bf7f-50c3a3c0cb60}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\VRDriver\BridgeHandler">
-      <UniqueIdentifier>{36b25b49-3bf4-47b5-a0a5-32a539e2fa86}</UniqueIdentifier>
+      <UniqueIdentifier>{f06e8868-0f55-4270-98b3-f15d5d51c94d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\VRDriver\BridgeSend">
-      <UniqueIdentifier>{f724a2fb-ae0a-467d-9a41-f83696111a7d}</UniqueIdentifier>
+      <UniqueIdentifier>{205f43ea-0218-4808-916f-45775e05ccfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ProtoBuf">
+      <UniqueIdentifier>{85967c3c-577e-4bdc-bbc4-7c5bd4ceabb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils">
+      <UniqueIdentifier>{e5d25daf-8836-4ff4-a783-bfb0abbe7e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils\AttitudeEestimator">
+      <UniqueIdentifier>{2f284711-89e7-462a-91bb-d3dcb86d026f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils\Exceptions">
+      <UniqueIdentifier>{881e2247-8ea2-4103-a3a6-87bab281dfb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PoseProcessor">
+      <UniqueIdentifier>{497e4414-8d57-4705-a4ed-bdd103d997e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PoseProcessor\Skeleton">
+      <UniqueIdentifier>{8f079cee-b3c1-4373-bd54-e404ea3cdb05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PoseProcessor\Skeleton\SimpleSkeleton">
+      <UniqueIdentifier>{bda93570-466c-4159-bd89-f87f641428df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PoseProcessor\TransformNode">
+      <UniqueIdentifier>{6dd59a80-e694-447e-b0c8-0f720a3dcd20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PoseProcessor\Transform">
+      <UniqueIdentifier>{db8bd7ac-b2ea-41ee-938d-18701c5e09ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker">
+      <UniqueIdentifier>{a70bf267-ad0f-4cd4-8985-45e46e150edd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker\Types">
+      <UniqueIdentifier>{27511849-22bd-4aee-9f07-e3e531b90d59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker\Defines">
+      <UniqueIdentifier>{22b9aaa3-766d-4cbb-83d3-1985ffe40f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker\ComputedTracker">
+      <UniqueIdentifier>{0a17042c-b64e-43a9-9665-7ab237e0ac40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker\ComputedHumanPoseTracker">
+      <UniqueIdentifier>{d6bb04d8-cabc-4394-9f92-9c66e3dccf82}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AttitudeEestimator.h">
-      <Filter>Source\Utils\AttitudeEestimator</Filter>
-    </ClInclude>
-    <ClInclude Include="PacketBase.h">
-      <Filter>Source\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="ProtobufMessages.pb.h">
-      <Filter>Source\ProtoBuf</Filter>
+    <ClCompile Include="Core.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClInclude Include="BridgeSend.h">
+      <Filter>Source\VRDriver\BridgeSend</Filter>
     </ClInclude>
     <ClInclude Include="BridgeHandler.h">
       <Filter>Source\VRDriver\BridgeHandler</Filter>
@@ -46,16 +81,64 @@
     <ClInclude Include="Bridge.h">
       <Filter>Source\VRDriver\Bridge</Filter>
     </ClInclude>
-    <ClInclude Include="BridgeSend.h">
-      <Filter>Source\VRDriver\BridgeSend</Filter>
+    <ClInclude Include="ProtobufMessages.pb.h">
+      <Filter>Source\ProtoBuf</Filter>
     </ClInclude>
+    <ClInclude Include="PacketBase.h">
+      <Filter>Source\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AttitudeEestimator.h">
+      <Filter>Source\Utils\AttitudeEestimator</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformNode.h">
+      <Filter>Source\PoseProcessor\TransformNode</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Source\PoseProcessor\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Source\Utils\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="NodePosition.h">
+      <Filter>Source\PoseProcessor</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleSkeleton.h">
+      <Filter>Source\PoseProcessor\Skeleton\SimpleSkeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanSkeleton.h">
+      <Filter>Source\PoseProcessor\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker.h">
+      <Filter>Source\Tracker\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerWithBattery.h">
+      <Filter>Source\Tracker\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerWithTPS.h">
+      <Filter>Source\Tracker\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceType.h">
+      <Filter>Source\Tracker\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerPosition.h">
+      <Filter>Source\Tracker\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerRole.h">
+      <Filter>Source\Tracker\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackerStatus.h">
+      <Filter>Source\Tracker\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputedTracker.h">
+      <Filter>Source\Tracker\ComputedTracker</Filter>
+    </ClInclude>
+    <ClCompile Include="ComputedHumanPoseTracker.cpp">
+      <Filter>Source\Tracker\ComputedHumanPoseTracker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AttitudeEestimator.cpp">
-      <Filter>Source\Utils\AttitudeEestimator</Filter>
-    </ClCompile>
-    <ClCompile Include="ProtobufMessages.pb.cc">
-      <Filter>Source\ProtoBuf</Filter>
+    <ClCompile Include="BridgeSend.cpp">
+      <Filter>Source\VRDriver\BridgeSend</Filter>
     </ClCompile>
     <ClCompile Include="BridgeHandler.cpp">
       <Filter>Source\VRDriver\BridgeHandler</Filter>
@@ -63,13 +146,44 @@
     <ClCompile Include="Bridge.cpp">
       <Filter>Source\VRDriver\Bridge</Filter>
     </ClCompile>
-    <ClCompile Include="BridgeSend.cpp">
-      <Filter>Source\VRDriver\BridgeSend</Filter>
+    <ClCompile Include="ProtobufMessages.pb.cc">
+      <Filter>Source\ProtoBuf</Filter>
+    </ClCompile>
+    <ClCompile Include="AttitudeEestimator.cpp">
+      <Filter>Source\Utils\AttitudeEestimator</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformNode.cpp">
+      <Filter>Source\PoseProcessor\TransformNode</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source\PoseProcessor\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleSkeleton.cpp">
+      <Filter>Source\PoseProcessor\Skeleton\SimpleSkeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputedTracker.cpp">
+      <Filter>Source\Tracker\ComputedTracker</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ProtobufMessages.proto">
       <Filter>Source\ProtoBuf</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Core.h">
+      <Filter>Source</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core_global.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareableTracker.h">
+      <Filter>Source\Tracker\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputedHumanPoseTracker.h">
+      <Filter>Source\Tracker\ComputedHumanPoseTracker</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

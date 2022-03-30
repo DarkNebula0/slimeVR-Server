@@ -1,6 +1,3 @@
-[submodule "Libs/eigen"]
-	path = Libs/eigen
-	url = https://gitlab.com/libeigen/eigen
 [submodule "DevelLib"]
 	path = DevelLib
 	url = https://github.com/DarkNebula0/devel-lib.git
