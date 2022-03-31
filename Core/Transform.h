@@ -15,7 +15,7 @@ namespace VRProcessor {
 		void combineWithParent(const CTransform& i_oTransform);
 		void combineWithParentGlobalRotation(const CTransform& i_oTransform);
 	public:
-		void setRot(const QQuaternion &i_oRot) {
+		void setRotation(const QQuaternion &i_oRot) {
 			this->m_oRot = i_oRot;
 		}
 		void setTranslation(const QVector3D& i_oTranslation) {
@@ -25,7 +25,7 @@ namespace VRProcessor {
 			this->m_oScale = i_oScale;
 		}
 	public:
-		__inline QQuaternion& rot() {
+		__inline QQuaternion& rotation() {
 			return this->m_oRot;
 		}
 		__inline QVector3D& translation() {

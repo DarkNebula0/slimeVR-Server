@@ -20,7 +20,9 @@ namespace VRTracker {
 		LeftController,
 		RightController,
 		LeftElbow,
-		RightElbow
+		RightElbow,
+		LeftHand,
+		RightHand,
 	};
 
 	class CTrackerPosition {
@@ -60,6 +62,8 @@ namespace VRTracker {
 		{ETrackerPosition::LeftController, CTrackerPosition(ETrackerPosition::LeftController,"body:left_controller",s_aoTrackerRole[ETrackerRole::LeftController])},
 		{ETrackerPosition::RightController, CTrackerPosition(ETrackerPosition::RightController,"body:right_controller",s_aoTrackerRole[ETrackerRole::RightController])},
 		{ETrackerPosition::LeftElbow, CTrackerPosition(ETrackerPosition::LeftElbow,"body:left_elbow",s_aoTrackerRole[ETrackerRole::LeftElbow])},
-		{ETrackerPosition::RightElbow, CTrackerPosition(ETrackerPosition::RightElbow,"body:right_elbow",s_aoTrackerRole[ETrackerRole::RightElbow])}
+		{ETrackerPosition::RightElbow, CTrackerPosition(ETrackerPosition::RightElbow,"body:right_elbow",s_aoTrackerRole[ETrackerRole::RightElbow])},
+		{ETrackerPosition::LeftHand, CTrackerPosition(ETrackerPosition::LeftHand,"body:left_hand",s_aoTrackerRole[ETrackerRole::LeftHand])},
+		{ETrackerPosition::RightHand, CTrackerPosition(ETrackerPosition::RightHand,"body:right_hand",s_aoTrackerRole[ETrackerRole::RightHand])}
 	};
 }

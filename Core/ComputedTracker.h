@@ -25,6 +25,13 @@ namespace VRTracker {
 		__inline const std::string_view descriptiveName() {
 			return this->name();
 		}
+	public:
+		__inline void setPosition(const QVector3D &i_oPosition) {
+			this->m_oPosition = i_oPosition;
+		}
+		__inline void setRotation(const QQuaternion& i_oRotation) {
+			this->m_oRotation = i_oRotation;
+		}
 	private:
 		QVector3D m_oPosition;
 		QQuaternion m_oRotation;

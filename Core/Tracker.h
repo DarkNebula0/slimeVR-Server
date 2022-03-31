@@ -40,12 +40,13 @@ namespace VRTracker {
 		__inline const float confidenceLevel() { return this->m_rConfidenceLevel; }
 		__inline const CTrackerPosition* bodyPosition() { return this->m_pTrackerPos; }
 		__inline const uint32_t id() { return this->m_nId; }
+
+		__inline void setStatus(ETrackerStatus i_eStatus) { 
+			this->m_eStatus = i_eStatus;
+		}
 	protected:
 		__inline void setName(const std::string_view i_stName) {
 			this->m_stName = i_stName;
-		}
-		__inline void setStatus(ETrackerStatus i_eStatus) {
-			this->m_eStatus = i_eStatus;
 		}
 		__inline void setConfidenceLevel(float i_rConfidenceLevel) {
 			this->m_rConfidenceLevel = i_rConfidenceLevel;
