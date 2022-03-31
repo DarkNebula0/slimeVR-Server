@@ -17,8 +17,7 @@ namespace VRProcessor {
 		void setComputedTracker(std::shared_ptr<VRTracker::CComputedHumanPoseTracker> i_pTracker);
 	private:
 		void fillNullComputedTrackers(bool i_bFillAll);
-		void fillTrackerIfNotSet(VRTracker::ETrackerRole i_eRole, VRTracker::ETrackerPosition i_ePosition, const std::string_view i_stName);
-		void setTracker(VRTracker::ETrackerPosition i_ePosition, std::shared_ptr<VRTracker::CTracker> i_pTracker);
+		void fillTrackerIfNotSet(VRTracker::ETrackerRole i_eRole, VRTracker::ETrackerPosition i_ePosition, const std::string_view i_stName);		
 		bool getTrackerRotation(VRTracker::ETrackerPosition i_ePosition, QQuaternion& i_oRotation);
 		bool getTrackerPosition(VRTracker::ETrackerPosition i_ePosition, QVector3D& i_oPosition);
 		void updateComputedTracker(std::shared_ptr<VRTracker::CComputedHumanPoseTracker> i_pTracker, ENodePosition i_ePositionNode, ENodePosition i_eRotationNode);
@@ -27,6 +26,7 @@ namespace VRProcessor {
 		void updateRootNodes();
 		void updateComputedTrackers();
 	public:
+		void setTracker(VRTracker::ETrackerPosition i_ePosition, std::shared_ptr<VRTracker::CTracker> i_pTracker);
 		void updatePose();
 	public:
 		std::shared_ptr<VRTracker::CComputedHumanPoseTracker> getTrackerByRole(VRTracker::ETrackerRole i_eRole) {

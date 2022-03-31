@@ -67,6 +67,9 @@
     <Filter Include="Source\Tracker\ComputedHumanPoseTracker">
       <UniqueIdentifier>{d6bb04d8-cabc-4394-9f92-9c66e3dccf82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\PoseProcessor\HumanPoseProcessor">
+      <UniqueIdentifier>{77a5856b-0073-4f87-9aa3-5d8d8ab73aef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp">
@@ -135,6 +138,9 @@
     <ClCompile Include="ComputedHumanPoseTracker.cpp">
       <Filter>Source\Tracker\ComputedHumanPoseTracker</Filter>
     </ClCompile>
+    <ClCompile Include="HumanPoseProcessor.cpp">
+      <Filter>Source\PoseProcessor\HumanPoseProcessor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BridgeSend.cpp">
@@ -184,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="ComputedHumanPoseTracker.h">
       <Filter>Source\Tracker\ComputedHumanPoseTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanPoseProcessor.h">
+      <Filter>Source\PoseProcessor\HumanPoseProcessor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

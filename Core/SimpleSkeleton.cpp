@@ -2,7 +2,7 @@
 
 VRProcessor::CSimpleSkeleton::CSimpleSkeleton()
 {
-	// Assemble nodes it's almost like playing pussel
+	// Assemble nodes it's almost like playing puzzle
 
 	// Head to hip
 	this->m_aoNodes[ENodePosition::Hmd].addChild(this->m_aoNodes[ENodePosition::Head].shared_from_this());

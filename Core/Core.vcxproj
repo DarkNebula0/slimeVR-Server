@@ -101,6 +101,7 @@
   <ItemGroup>
     <ClCompile Include="ComputedHumanPoseTracker.cpp" />
     <ClCompile Include="ComputedTracker.cpp" />
+    <ClCompile Include="HumanPoseProcessor.cpp" />
     <ClCompile Include="ProtobufMessages.pb.cc" />
     <ClCompile Include="SimpleSkeleton.cpp" />
     <ClCompile Include="Transform.cpp" />
@@ -114,6 +115,7 @@
     <ClInclude Include="core_global.h" />
     <ClInclude Include="DeviceType.h" />
     <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="HumanPoseProcessor.h" />
     <ClInclude Include="HumanSkeleton.h" />
     <ClInclude Include="NodePosition.h" />
     <ClInclude Include="PacketBase.h" />
