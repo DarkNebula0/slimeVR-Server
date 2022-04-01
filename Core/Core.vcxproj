@@ -99,6 +99,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IMUTracker.cpp" />
     <ClCompile Include="ComputedHumanPoseTracker.cpp" />
     <ClCompile Include="ComputedTracker.cpp" />
     <ClCompile Include="Tracker.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="Bridge.h" />
     <ClInclude Include="BridgeHandler.h" />
     <ClInclude Include="BridgeSend.h" />
+    <ClInclude Include="IMUTracker.h" />
     <ClInclude Include="ComputedHumanPoseTracker.h" />
     <ClInclude Include="ComputedTracker.h" />
     <ClInclude Include="core_global.h" />

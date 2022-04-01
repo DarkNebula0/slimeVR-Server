@@ -1,8 +1,11 @@
 #pragma once
 
+#include <../Core/IMUTracker.h>
+
 #include <string>
 #include <library/CharArray.h>
 #include <library/Timer.h>
+#include <memory>
 
 class CTracker
 {
@@ -39,14 +42,17 @@ private:
 	SInfo m_grInfo;
 	bool m_bIsReady;
 	int8_t m_nRSSI;
+	std::shared_ptr<VRTracker::CIMUTracker> m_pTracker0;
+	std::shared_ptr<VRTracker::CIMUTracker> m_pTracker1;
 public:
 	__inline SInfo& info() { return this->m_grInfo; }
 	__inline bool isReady() const { return this->m_bIsReady; }
 	__inline int8_t rssi() const { return this->m_nRSSI; }
+	std::shared_ptr<VRTracker::CIMUTracker> imuTrackerById(uint32_t i_nId);
 public:
 	__inline void setReady() { this->m_bIsReady = true; }
 	__inline void setRSSI(const int8_t i_nRSSI) {
 		this->m_nRSSI = i_nRSSI;
 	}
-
+	void setImuTracker(uint32_t i_nId, std::shared_ptr<VRTracker::CIMUTracker> i_pTracker);
 };

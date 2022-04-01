@@ -6,6 +6,9 @@
 #include <string>
 #include <map>
 
+// TODO: Add imu from network packet [udp]
+// Handshake pack.
+
 namespace VRTracker {
 	class CComputedHumanPoseTracker;
 	class CVRTracker;

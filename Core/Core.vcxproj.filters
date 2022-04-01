@@ -76,6 +76,9 @@
     <Filter Include="Source\Tracker\Tracker">
       <UniqueIdentifier>{941d09c0-b77f-4a38-8cca-9de395a0fb6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Tracker\IMUTracker">
+      <UniqueIdentifier>{7bfbbb09-5c6a-4220-bb96-cbece84ab251}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp">
@@ -150,6 +153,9 @@
     <ClCompile Include="Tracker.cpp">
       <Filter>Source\Tracker\Tracker</Filter>
     </ClCompile>
+    <ClCompile Include="IMUTracker.cpp">
+      <Filter>Source\Tracker\IMUTracker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BridgeSend.cpp">
@@ -208,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="Tracker.h">
       <Filter>Source\Tracker\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="IMUTracker.h">
+      <Filter>Source\Tracker\IMUTracker</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

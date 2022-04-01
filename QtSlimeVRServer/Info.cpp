@@ -2,8 +2,9 @@
 #include "TrackerPacket.h"
 #include "Tracker.h"
 #include "InfoSend.h"
-#include <library/Logger.h>
 #include "Defines.h"
+#include "../Core/IMUTracker.h"
+#include <library/Logger.h>
 
 using namespace Network::Packet::TrackerPacket::Receive;
 
@@ -17,8 +18,18 @@ void Info::Packet::TrackerServer::HandshakeRequest(const std::shared_ptr<CTracke
 	trackerInfo.eIMU0 = static_cast<CTracker::EImu>(p->nImu0);
 	trackerInfo.eIMU1 = static_cast<CTracker::EImu>(p->nImu1);
 	trackerInfo.chMAC =p->achMac;
-	i_pSession->tracker().setReady();
+	
+	if (trackerInfo.eIMU0 == CTracker::EImu::IMU_ICM20948) {
+		auto pTracker = std::make_shared<VRTracker::CIMUTracker>("TEST_IMU_0");
+		i_pSession->tracker().setImuTracker(0, pTracker);
+	}
 
+	if (trackerInfo.eIMU1 == CTracker::EImu::IMU_ICM20948) {
+		auto pTracker = std::make_shared<VRTracker::CIMUTracker>("TEST_IMU_1");
+		i_pSession->tracker().setImuTracker(1, pTracker);
+	}
+
+	i_pSession->tracker().setReady();
 	LOGI_DEBUG("[HandshakeRequest] New Tracker IMU0-Type: " + std::to_string(p->nImu0) + " IMU1 - Type: " + std::to_string(p->nImu1));
 
 	SendHandshake(i_pSession);
