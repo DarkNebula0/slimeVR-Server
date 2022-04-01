@@ -35,7 +35,7 @@ namespace VRProcessor {
 		}
 	private:
 		CMutex m_oMutex;
-		std::map<ENodePosition, CTransformNode> m_aoNodes;
+		std::map<ENodePosition, std::shared_ptr<CTransformNode>> m_apNodes;
 		std::map<VRTracker::ETrackerRole, std::shared_ptr<VRTracker::CComputedHumanPoseTracker>> m_apComputedTracker;
 		std::map<VRTracker::ETrackerPosition, std::shared_ptr<VRTracker::CTracker>> m_apTracker;
 	};

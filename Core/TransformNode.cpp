@@ -24,11 +24,11 @@ void VRProcessor::CTransformNode::updateWorldTransform()
 
 void VRProcessor::CTransformNode::addChild(std::shared_ptr<CTransformNode> i_pChild)
 {
-	if (this->m_pParent) {
+	if (i_pChild->m_pParent) {
 		throw CNodeParentAlreadySet();
 	}
 
-	this->m_pParent = i_pChild;
+	i_pChild->m_pParent = this->shared_from_this();
 
 	MutexVectorLockGuard(this->m_apChildren);
 	this->m_apChildren.push_back(i_pChild);

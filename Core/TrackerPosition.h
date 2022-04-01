@@ -38,7 +38,7 @@ namespace VRTracker {
 		__inline const std::string_view designation() {
 			return this->m_stDesignation;
 		}
-		__inline const CTrackerRole& role() {
+		__inline const CTrackerRole& role() const {
 			return this->m_oRole;
 		}
 	private:
@@ -66,4 +66,15 @@ namespace VRTracker {
 		{ETrackerPosition::LeftHand, CTrackerPosition(ETrackerPosition::LeftHand,"body:left_hand",s_aoTrackerRole[ETrackerRole::LeftHand])},
 		{ETrackerPosition::RightHand, CTrackerPosition(ETrackerPosition::RightHand,"body:right_hand",s_aoTrackerRole[ETrackerRole::RightHand])}
 	};
+
+	static ETrackerPosition getTrackerPositionFromRole(ETrackerRole i_eRole) {
+
+		for (auto const & [eKey, oVal] : s_aoTrackerPosition) {
+			if (oVal.role().role() == i_eRole) {
+				return eKey;
+			}
+		}
+
+		return ETrackerPosition::None;
+	}
 }

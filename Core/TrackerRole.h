@@ -37,16 +37,16 @@ namespace VRTracker {
 		CTrackerRole(): m_eRole(ETrackerRole::None), m_eType(EDeviceType::None) {};
 		virtual ~CTrackerRole() = default;
 	public:
-		__inline const ETrackerRole role()  {
+		__inline const ETrackerRole role()  const {
 			return this->m_eRole;
 		}
-		__inline const EDeviceType deviceType() {
+		__inline const EDeviceType deviceType() const {
 			return this->m_eType;
 		}
-		__inline const std::string_view roleHint() {
+		__inline const std::string_view roleHint() const {
 			return this->m_stRoleHint;
 		}
-		__inline const std::string_view viveRole() {
+		__inline const std::string_view viveRole() const {
 			return this->m_stViveRole;
 		}
 	private:
@@ -76,7 +76,7 @@ namespace VRTracker {
 		{ETrackerRole::Neck, CTrackerRole(ETrackerRole::Neck, EDeviceType::Tracker, "", "")},
 		{ETrackerRole::Camera, CTrackerRole(ETrackerRole::Camera, EDeviceType::Tracker, "vive_tracker_camera", "TrackerRole_Camera")},
 		{ETrackerRole::Keyboard, CTrackerRole(ETrackerRole::Keyboard, EDeviceType::Tracker, "vive_tracker_keyboard", "TrackerRole_Keyboard")},
-		{ETrackerRole::Hmd, CTrackerRole(ETrackerRole::Hmd, EDeviceType::Hmd, "", "")},
+		{ETrackerRole::Hmd, CTrackerRole(ETrackerRole::Hmd, EDeviceType::Hmd, "HMD", "")},
 		{ETrackerRole::Beacon, CTrackerRole(ETrackerRole::Beacon, EDeviceType::TrackingReference, "", "")},
 		{ETrackerRole::GenericController, CTrackerRole(ETrackerRole::GenericController, EDeviceType::Controller, "vive_tracker_handed", "TrackerRole_Handed")},
 	};

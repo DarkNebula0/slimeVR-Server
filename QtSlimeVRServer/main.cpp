@@ -9,6 +9,7 @@
 
 #include "../Core/Bridge.h"
 #include "MessageHandler.h"
+#include "../Core/HumanPoseProcessor.h"
 
 #if defined(Q_OS_WIN)
 #include <Windows.h>
@@ -39,6 +40,8 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
+    // Load human pose processor
+    HumanPoseProcessorInstance->initialize();
    
     // Load server
     TrackerServerInstance->initialize(QHostAddress::Any, UDP_PORT);

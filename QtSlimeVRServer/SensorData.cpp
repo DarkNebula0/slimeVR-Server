@@ -1,14 +1,18 @@
 #include "SensorData.h"
+#include "../Core/HumanPoseProcessor.h"
 #include "TrackerPacket.h"
-#include "Tracker.h"
 #include "InfoSend.h"
-#include <library/Logger.h>
+#include "Tracker.h"
 #include "Defines.h"
 #include "Gui.h"
-#include <iostream>
+#include <library/Logger.h>
 #include <QQuaternion>
+#include <iostream>
+#include <math.h>
 
 using namespace Network::Packet::TrackerPacket::Receive;
+
+QQuaternion oTest = QQuaternion::fromAxisAndAngle(QVector3D(1, 0, 0), -(M_1_PI * 0.5F));
 
 void SensorData::Packet::TrackerServer::RotationDataRequest(const std::shared_ptr<CTrackerSession>& i_pSession, const CNetworkPacket& i_oPacket)
 {
@@ -17,15 +21,12 @@ void SensorData::Packet::TrackerServer::RotationDataRequest(const std::shared_pt
 	
 	// I dont have any fucking clue 
 
-
-	QQuaternion oQuat(QVector4D(p->dX, p->dY, p->dZ, p->dW));
+	QQuaternion oQuat = oTest * QQuaternion(QVector4D(p->dX, p->dY, p->dZ, p->dW));
 	QVector3D qVec = oQuat.toEulerAngles();
 	
-	printf_s("new rotation data SensorID: %i Accuracy: %i Sensor Rotation: %f X: %f Y: %f Z: %f W: %f\n", p->nId, p->nAccuracy, p->dSensorRotation, p->dX, p->dY, p->dZ, p->dW);
-	
+
 	GuiInstance->m_oTestTransform.setX(qVec.x());
 	GuiInstance->m_oTestTransform.setY(qVec.y());
 	GuiInstance->m_oTestTransform.setZ(qVec.z());
 	emit GuiInstance->testChanged();
-
 }

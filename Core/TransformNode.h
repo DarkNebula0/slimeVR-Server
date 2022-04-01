@@ -27,6 +27,10 @@ namespace VRProcessor {
 		__inline CTransform* worldTransform() {
 			return &this->m_oWorldTransform;
 		}
+	public:
+		static std::shared_ptr<CTransformNode> createInstance() {
+			return std::make_shared<CTransformNode>();
+		}
 	private:
 		std::shared_ptr<CTransformNode> m_pParent;
 		CTransform m_oLocalTransform;

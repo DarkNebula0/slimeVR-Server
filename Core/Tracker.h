@@ -10,14 +10,9 @@
 namespace VRTracker {
 	class CTracker {
 	public:
-		CTracker(uint32_t i_nId, const std::string_view i_stName)	
-			: m_stName(i_stName), m_eStatus(ETrackerStatus::Disconnected), m_rConfidenceLevel(0.0f)
-			, m_pTrackerPos(&s_aoTrackerPosition[ETrackerPosition::None]), m_nId(i_nId) {};
-
-		CTracker()	
-			: m_stName(""), m_eStatus(ETrackerStatus::Disconnected), m_rConfidenceLevel(0.0f)
-			, m_pTrackerPos(&s_aoTrackerPosition[ETrackerPosition::None]), m_nId(0) {};
-		virtual ~CTracker();
+		CTracker(uint32_t i_nId, const std::string_view i_stName);
+		CTracker();
+		virtual ~CTracker() = default;
 	private:
 		static std::atomic<uint32_t> s_nTrackerId;
 	public:
@@ -44,6 +39,9 @@ namespace VRTracker {
 		__inline void setStatus(ETrackerStatus i_eStatus) { 
 			this->m_eStatus = i_eStatus;
 		}
+		__inline void setBodyPosition(ETrackerPosition i_ePosition) {
+			this->m_pTrackerPos = &s_aoTrackerPosition[i_ePosition];
+		}
 	protected:
 		__inline void setName(const std::string_view i_stName) {
 			this->m_stName = i_stName;
@@ -51,10 +49,7 @@ namespace VRTracker {
 		__inline void setConfidenceLevel(float i_rConfidenceLevel) {
 			this->m_rConfidenceLevel = i_rConfidenceLevel;
 		}
-		__inline void setBodyPosition(ETrackerPosition i_ePosition) {
-			this->m_pTrackerPos = &s_aoTrackerPosition[i_ePosition];
-		}
-
+	
 		__inline void setId(uint32_t i_nId) {
 			this->m_nId = i_nId;
 		}
@@ -68,4 +63,5 @@ namespace VRTracker {
 		CTrackerPosition *m_pTrackerPos;
 		uint32_t m_nId;
 	};
+
 }

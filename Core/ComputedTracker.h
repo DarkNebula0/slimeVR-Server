@@ -16,8 +16,7 @@ namespace VRTracker {
 	public:
 		virtual bool position(QVector3D& i_oStore) final;
 		virtual bool rotation(QQuaternion& i_oStore) final;
-		virtual bool userEditable() final  { return false; };
-		virtual bool isComputed() final { return false; };
+		virtual bool isComputed() override { return true; };
 	public:
 		__inline const std::string_view serial() {
 			return this->m_stSerial;

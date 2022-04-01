@@ -101,6 +101,8 @@
   <ItemGroup>
     <ClCompile Include="ComputedHumanPoseTracker.cpp" />
     <ClCompile Include="ComputedTracker.cpp" />
+    <ClCompile Include="Tracker.cpp" />
+    <ClCompile Include="VRTracker.cpp" />
     <ClCompile Include="HumanPoseProcessor.cpp" />
     <ClCompile Include="ProtobufMessages.pb.cc" />
     <ClCompile Include="SimpleSkeleton.cpp" />
@@ -130,6 +132,7 @@
     <ClInclude Include="TrackerWithTPS.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="TransformNode.h" />
+    <ClInclude Include="VRTracker.h" />
     <QtMoc Include="Core.h" />
     <ClCompile Include="AttitudeEestimator.cpp" />
     <ClCompile Include="Bridge.cpp" />

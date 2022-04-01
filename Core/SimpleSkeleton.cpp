@@ -2,40 +2,45 @@
 
 VRProcessor::CSimpleSkeleton::CSimpleSkeleton()
 {
+	// Init nodes
+	for (uint32_t i = 0; i <= static_cast<uint32_t>(ENodePosition::RightElbowTracker); i++) {
+		m_apNodes[static_cast<ENodePosition>(i)] = CTransformNode::createInstance();
+	}
+
 	// Assemble nodes it's almost like playing puzzle
 
 	// Head to hip
-	this->m_aoNodes[ENodePosition::Hmd].addChild(this->m_aoNodes[ENodePosition::Head].shared_from_this());
-	this->m_aoNodes[ENodePosition::Head].addChild(this->m_aoNodes[ENodePosition::Neck].shared_from_this());
-	this->m_aoNodes[ENodePosition::Neck].addChild(this->m_aoNodes[ENodePosition::Chest].shared_from_this());
-	this->m_aoNodes[ENodePosition::Chest].addChild(this->m_aoNodes[ENodePosition::Waist].shared_from_this());
-	this->m_aoNodes[ENodePosition::Waist].addChild(this->m_aoNodes[ENodePosition::Hip].shared_from_this());
+	this->m_apNodes[ENodePosition::Hmd]->addChild(this->m_apNodes[ENodePosition::Head]);
+	this->m_apNodes[ENodePosition::Head]->addChild(this->m_apNodes[ENodePosition::Neck]);
+	this->m_apNodes[ENodePosition::Neck]->addChild(this->m_apNodes[ENodePosition::Chest]);
+	this->m_apNodes[ENodePosition::Chest]->addChild(this->m_apNodes[ENodePosition::Waist]);
+	this->m_apNodes[ENodePosition::Waist]->addChild(this->m_apNodes[ENodePosition::Hip]);
 
 	// Hip to feet 
-	this->m_aoNodes[ENodePosition::Hip].addChild(this->m_aoNodes[ENodePosition::LeftHip].shared_from_this());
-	this->m_aoNodes[ENodePosition::Hip].addChild(this->m_aoNodes[ENodePosition::RightHip].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftHip].addChild(this->m_aoNodes[ENodePosition::LeftKnee].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightHip].addChild(this->m_aoNodes[ENodePosition::RightKnee].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftKnee].addChild(this->m_aoNodes[ENodePosition::LeftAnkle].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightKnee].addChild(this->m_aoNodes[ENodePosition::RightAnkle].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightAnkle].addChild(this->m_aoNodes[ENodePosition::LeftFoot].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftAnkle].addChild(this->m_aoNodes[ENodePosition::RightFoot].shared_from_this());
+	this->m_apNodes[ENodePosition::Hip]->addChild(this->m_apNodes[ENodePosition::LeftHip]);
+	this->m_apNodes[ENodePosition::Hip]->addChild(this->m_apNodes[ENodePosition::RightHip]);
+	this->m_apNodes[ENodePosition::LeftHip]->addChild(this->m_apNodes[ENodePosition::LeftKnee]);
+	this->m_apNodes[ENodePosition::RightHip]->addChild(this->m_apNodes[ENodePosition::RightKnee]);
+	this->m_apNodes[ENodePosition::LeftKnee]->addChild(this->m_apNodes[ENodePosition::LeftAnkle]);
+	this->m_apNodes[ENodePosition::RightKnee]->addChild(this->m_apNodes[ENodePosition::RightAnkle]);
+	this->m_apNodes[ENodePosition::RightAnkle]->addChild(this->m_apNodes[ENodePosition::LeftFoot]);
+	this->m_apNodes[ENodePosition::LeftAnkle]->addChild(this->m_apNodes[ENodePosition::RightFoot]);
 
 	// Arms
-	this->m_aoNodes[ENodePosition::LeftHand].addChild(this->m_aoNodes[ENodePosition::LeftWrist].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightHand].addChild(this->m_aoNodes[ENodePosition::RightWrist].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftWrist].addChild(this->m_aoNodes[ENodePosition::LeftElbow].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightWrist].addChild(this->m_aoNodes[ENodePosition::RightElbow].shared_from_this());
+	this->m_apNodes[ENodePosition::LeftHand]->addChild(this->m_apNodes[ENodePosition::LeftWrist]);
+	this->m_apNodes[ENodePosition::RightHand]->addChild(this->m_apNodes[ENodePosition::RightWrist]);
+	this->m_apNodes[ENodePosition::LeftWrist]->addChild(this->m_apNodes[ENodePosition::LeftElbow]);
+	this->m_apNodes[ENodePosition::RightWrist]->addChild(this->m_apNodes[ENodePosition::RightElbow]);
 
 	// Offsets
-	this->m_aoNodes[ENodePosition::Chest].addChild(this->m_aoNodes[ENodePosition::ChestTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::Hip].addChild(this->m_aoNodes[ENodePosition::WaistTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftKnee].addChild(this->m_aoNodes[ENodePosition::LeftKneeTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightKnee].addChild(this->m_aoNodes[ENodePosition::RightKneeTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftFoot].addChild(this->m_aoNodes[ENodePosition::LeftFootTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightFoot].addChild(this->m_aoNodes[ENodePosition::RightFootTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::LeftElbow].addChild(this->m_aoNodes[ENodePosition::LeftElbowTracker].shared_from_this());
-	this->m_aoNodes[ENodePosition::RightElbow].addChild(this->m_aoNodes[ENodePosition::RightElbowTracker].shared_from_this());
+	this->m_apNodes[ENodePosition::Chest]->addChild(this->m_apNodes[ENodePosition::ChestTracker]);
+	this->m_apNodes[ENodePosition::Hip]->addChild(this->m_apNodes[ENodePosition::WaistTracker]);
+	this->m_apNodes[ENodePosition::LeftKnee]->addChild(this->m_apNodes[ENodePosition::LeftKneeTracker]);
+	this->m_apNodes[ENodePosition::RightKnee]->addChild(this->m_apNodes[ENodePosition::RightKneeTracker]);
+	this->m_apNodes[ENodePosition::LeftFoot]->addChild(this->m_apNodes[ENodePosition::LeftFootTracker]);
+	this->m_apNodes[ENodePosition::RightFoot]->addChild(this->m_apNodes[ENodePosition::RightFootTracker]);
+	this->m_apNodes[ENodePosition::LeftElbow]->addChild(this->m_apNodes[ENodePosition::LeftElbowTracker]);
+	this->m_apNodes[ENodePosition::RightElbow]->addChild(this->m_apNodes[ENodePosition::RightElbowTracker]);
 }
 
 VRProcessor::CSimpleSkeleton::~CSimpleSkeleton()
@@ -66,6 +71,7 @@ void VRProcessor::CSimpleSkeleton::fillTrackerIfNotSet(VRTracker::ETrackerRole i
 	RecursiveLockGuard(this->m_oMutex);
 	if (!this->m_apComputedTracker[i_eRole]) {
 		this->m_apComputedTracker[i_eRole] = std::make_shared<VRTracker::CComputedHumanPoseTracker>(i_stName, i_ePosition);
+		this->m_apComputedTracker[i_eRole]->setBodyPosition(i_ePosition);
 		this->m_apComputedTracker[i_eRole]->setStatus(VRTracker::ETrackerStatus::Ok);
 	}
 }
@@ -100,8 +106,8 @@ void VRProcessor::CSimpleSkeleton::updateComputedTracker(std::shared_ptr<VRTrack
 {
 	if (!i_pTracker) return;
 	RecursiveLockGuard(this->m_oMutex);
-	i_pTracker->setPosition(this->m_aoNodes[i_ePositionNode].worldTransform()->translation());
-	i_pTracker->setRotation(this->m_aoNodes[i_eRotationNode].worldTransform()->rotation());
+	i_pTracker->setPosition(this->m_apNodes[i_ePositionNode]->worldTransform()->translation());
+	i_pTracker->setRotation(this->m_apNodes[i_eRotationNode]->worldTransform()->rotation());
 	i_pTracker->dataTick();
 }
 
@@ -115,108 +121,108 @@ void VRProcessor::CSimpleSkeleton::updateLocalTransforms()
 	// Hmd tracker 
 	if (this->m_apTracker[VRTracker::ETrackerPosition::Hmd]) {
 		if (this->m_apTracker[VRTracker::ETrackerPosition::Hmd]->position(oPosition)) {
-			this->m_aoNodes[ENodePosition::Hmd].localTransform()->setTranslation(oPosition);
+			this->m_apNodes[ENodePosition::Hmd]->localTransform()->setTranslation(oPosition);
 		}
 		if (this->getTrackerRotation(VRTracker::ETrackerPosition::Hmd, oRotation)) {
-			this->m_aoNodes[ENodePosition::Hmd].localTransform()->setRotation(oRotation);
-			this->m_aoNodes[ENodePosition::Head].localTransform()->setRotation(oRotation);
+			this->m_apNodes[ENodePosition::Hmd]->localTransform()->setRotation(oRotation);
+			this->m_apNodes[ENodePosition::Head]->localTransform()->setRotation(oRotation);
 		}
 	}
 	else {
-		this->m_aoNodes[ENodePosition::Hmd].localTransform()->setTranslation(oPosition);
-		this->m_aoNodes[ENodePosition::Hmd].localTransform()->setRotation(oRotation);
-		this->m_aoNodes[ENodePosition::Head].localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::Hmd]->localTransform()->setTranslation(oPosition);
+		this->m_apNodes[ENodePosition::Hmd]->localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::Head]->localTransform()->setRotation(oRotation);
 	}
 
 	// Chest tracker
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::Chest, oRotation)) {
-		this->m_aoNodes[ENodePosition::Neck].localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::Neck]->localTransform()->setRotation(oRotation);
 	}
 
 	// Waist tracker
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::Waist, oRotation)) {
-		this->m_aoNodes[ENodePosition::Chest].localTransform()->setRotation(oRotation);
-		this->m_aoNodes[ENodePosition::ChestTracker].localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::Chest]->localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::ChestTracker]->localTransform()->setRotation(oRotation);
 	}
 
 	// Hip tracker
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::Hip, oRotation)) {
-		this->m_aoNodes[ENodePosition::Waist].localTransform()->setRotation(oRotation);
-		this->m_aoNodes[ENodePosition::WaistTracker].localTransform()->setRotation(oRotation);
-		this->m_aoNodes[ENodePosition::Hip].localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::Waist]->localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::WaistTracker]->localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::Hip]->localTransform()->setRotation(oRotation);
 	}
 
 	// Left leg
 	this->getTrackerRotation(VRTracker::ETrackerPosition::LeftLeg, oRotation);
 	this->getTrackerRotation(VRTracker::ETrackerPosition::LeftAnkle, oRotation2);
 
-	this->m_aoNodes[ENodePosition::LeftHip].localTransform()->setRotation(oRotation);
-	this->m_aoNodes[ENodePosition::LeftKnee].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::LeftAnkle].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::LeftFoot].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::LeftKneeTracker].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::LeftFootTracker].localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::LeftHip]->localTransform()->setRotation(oRotation);
+	this->m_apNodes[ENodePosition::LeftKnee]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::LeftAnkle]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::LeftFoot]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::LeftKneeTracker]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::LeftFootTracker]->localTransform()->setRotation(oRotation2);
 
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::LeftFoot, oRotation2)) {
-		this->m_aoNodes[ENodePosition::LeftAnkle].localTransform()->setRotation(oRotation2);
-		this->m_aoNodes[ENodePosition::LeftFoot].localTransform()->setRotation(oRotation2);
-		this->m_aoNodes[ENodePosition::LeftFootTracker].localTransform()->setRotation(oRotation2);
+		this->m_apNodes[ENodePosition::LeftAnkle]->localTransform()->setRotation(oRotation2);
+		this->m_apNodes[ENodePosition::LeftFoot]->localTransform()->setRotation(oRotation2);
+		this->m_apNodes[ENodePosition::LeftFootTracker]->localTransform()->setRotation(oRotation2);
 	}
 
 	// Right leg 
 	this->getTrackerRotation(VRTracker::ETrackerPosition::RightLeg, oRotation);
 	this->getTrackerRotation(VRTracker::ETrackerPosition::RightAnkle, oRotation2);
 
-	this->m_aoNodes[ENodePosition::RightHip].localTransform()->setRotation(oRotation);
-	this->m_aoNodes[ENodePosition::RightKnee].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::RightAnkle].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::RightFoot].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::RightKneeTracker].localTransform()->setRotation(oRotation2);
-	this->m_aoNodes[ENodePosition::RightFootTracker].localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::RightHip]->localTransform()->setRotation(oRotation);
+	this->m_apNodes[ENodePosition::RightKnee]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::RightAnkle]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::RightFoot]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::RightKneeTracker]->localTransform()->setRotation(oRotation2);
+	this->m_apNodes[ENodePosition::RightFootTracker]->localTransform()->setRotation(oRotation2);
 
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::RightFoot, oRotation2)) {
-		this->m_aoNodes[ENodePosition::RightAnkle].localTransform()->setRotation(oRotation2);
-		this->m_aoNodes[ENodePosition::RightFoot].localTransform()->setRotation(oRotation2);
-		this->m_aoNodes[ENodePosition::RightFootTracker].localTransform()->setRotation(oRotation2);
+		this->m_apNodes[ENodePosition::RightAnkle]->localTransform()->setRotation(oRotation2);
+		this->m_apNodes[ENodePosition::RightFoot]->localTransform()->setRotation(oRotation2);
+		this->m_apNodes[ENodePosition::RightFootTracker]->localTransform()->setRotation(oRotation2);
 	}
 
 	// Left arm 
 	if (this->m_apTracker[VRTracker::ETrackerPosition::LeftHand]) {
 		if (this->getTrackerPosition(VRTracker::ETrackerPosition::LeftHand, oPosition)) {
-			this->m_aoNodes[ENodePosition::LeftHand].localTransform()->setTranslation(oPosition);
+			this->m_apNodes[ENodePosition::LeftHand]->localTransform()->setTranslation(oPosition);
 		}
 		if (this->getTrackerRotation(VRTracker::ETrackerPosition::LeftHand, oRotation)) {
-			this->m_aoNodes[ENodePosition::LeftHand].localTransform()->setRotation(oRotation);
+			this->m_apNodes[ENodePosition::LeftHand]->localTransform()->setRotation(oRotation);
 		}
 	}
 
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::LeftElbow, oRotation)) {
-		this->m_aoNodes[ENodePosition::LeftWrist].localTransform()->setRotation(oRotation);
-		this->m_aoNodes[ENodePosition::LeftElbowTracker].localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::LeftWrist]->localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::LeftElbowTracker]->localTransform()->setRotation(oRotation);
 	}
 
 	// Right arm 
 	if (this->m_apTracker[VRTracker::ETrackerPosition::RightHand]) {
 		if (this->getTrackerPosition(VRTracker::ETrackerPosition::RightHand, oPosition)) {
-			this->m_aoNodes[ENodePosition::RightHand].localTransform()->setTranslation(oPosition);
+			this->m_apNodes[ENodePosition::RightHand]->localTransform()->setTranslation(oPosition);
 		}
 		if (this->getTrackerRotation(VRTracker::ETrackerPosition::RightHand, oRotation)) {
-			this->m_aoNodes[ENodePosition::RightHand].localTransform()->setRotation(oRotation);
+			this->m_apNodes[ENodePosition::RightHand]->localTransform()->setRotation(oRotation);
 		}
 	}
 
 	if (this->getTrackerRotation(VRTracker::ETrackerPosition::RightElbow, oRotation)) {
-		this->m_aoNodes[ENodePosition::RightWrist].localTransform()->setRotation(oRotation);
-		this->m_aoNodes[ENodePosition::RightElbowTracker].localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::RightWrist]->localTransform()->setRotation(oRotation);
+		this->m_apNodes[ENodePosition::RightElbowTracker]->localTransform()->setRotation(oRotation);
 	}
 }
 
 void VRProcessor::CSimpleSkeleton::updateRootNodes()
 {
 	RecursiveLockGuard(this->m_oMutex);
-	this->m_aoNodes[ENodePosition::Hmd].update();
-	this->m_aoNodes[ENodePosition::LeftHand].update();
-	this->m_aoNodes[ENodePosition::RightHand].update();
+	this->m_apNodes[ENodePosition::Hmd]->update();
+	this->m_apNodes[ENodePosition::LeftHand]->update();
+	this->m_apNodes[ENodePosition::RightHand]->update();
 }
 
 void VRProcessor::CSimpleSkeleton::updateComputedTrackers()

@@ -70,6 +70,12 @@
     <Filter Include="Source\PoseProcessor\HumanPoseProcessor">
       <UniqueIdentifier>{77a5856b-0073-4f87-9aa3-5d8d8ab73aef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Tracker\VRTracker">
+      <UniqueIdentifier>{03d83816-b7ee-43e1-9f0e-678619a0e534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker\Tracker">
+      <UniqueIdentifier>{941d09c0-b77f-4a38-8cca-9de395a0fb6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp">
@@ -111,9 +117,6 @@
     <ClInclude Include="HumanSkeleton.h">
       <Filter>Source\PoseProcessor\Skeleton</Filter>
     </ClInclude>
-    <ClInclude Include="Tracker.h">
-      <Filter>Source\Tracker\Types</Filter>
-    </ClInclude>
     <ClInclude Include="TrackerWithBattery.h">
       <Filter>Source\Tracker\Types</Filter>
     </ClInclude>
@@ -140,6 +143,12 @@
     </ClCompile>
     <ClCompile Include="HumanPoseProcessor.cpp">
       <Filter>Source\PoseProcessor\HumanPoseProcessor</Filter>
+    </ClCompile>
+    <ClCompile Include="VRTracker.cpp">
+      <Filter>Source\Tracker\VRTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker.cpp">
+      <Filter>Source\Tracker\Tracker</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +202,12 @@
     </ClInclude>
     <ClInclude Include="HumanPoseProcessor.h">
       <Filter>Source\PoseProcessor\HumanPoseProcessor</Filter>
+    </ClInclude>
+    <ClInclude Include="VRTracker.h">
+      <Filter>Source\Tracker\VRTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker.h">
+      <Filter>Source\Tracker\Tracker</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
