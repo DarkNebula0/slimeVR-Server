@@ -27,6 +27,7 @@ namespace VRProcessor {
 		void updateComputedTrackers();
 	public:
 		void setTracker(VRTracker::ETrackerPosition i_ePosition, std::shared_ptr<VRTracker::CTracker> i_pTracker);
+		void setComputedTracker(VRTracker::ETrackerPosition i_ePosition, std::shared_ptr<VRTracker::CComputedHumanPoseTracker> i_pTracker);
 		void updatePose();
 	public:
 		std::shared_ptr<VRTracker::CComputedHumanPoseTracker> getTrackerByRole(VRTracker::ETrackerRole i_eRole) {

@@ -4,6 +4,7 @@
 #include <QThread>
 #include "TrackerServer.h"
 #include "MessageHandler.h"
+#include "../Core/HumanPoseProcessor.h"
 
 CSideTasks::CSideTasks()
 	:  m_bHasStopRequest(false)
@@ -25,6 +26,9 @@ void CSideTasks::operate()
 
 		// Cehck for new msg from OpenVR bridge
 		MessageHandlerInstance->handleTasks();
+
+		// TODO: extract to own thread
+		HumanPoseProcessorInstance->updatePose();
 
 		QThread::msleep(SIDE_TASK_THREAD_DELAY_MS);
 	}

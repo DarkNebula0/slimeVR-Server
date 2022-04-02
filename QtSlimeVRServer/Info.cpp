@@ -4,6 +4,7 @@
 #include "InfoSend.h"
 #include "Defines.h"
 #include "../Core/IMUTracker.h"
+#include "../Core/HumanPoseProcessor.h"
 #include <library/Logger.h>
 
 using namespace Network::Packet::TrackerPacket::Receive;
@@ -19,14 +20,20 @@ void Info::Packet::TrackerServer::HandshakeRequest(const std::shared_ptr<CTracke
 	trackerInfo.eIMU1 = static_cast<CTracker::EImu>(p->nImu1);
 	trackerInfo.chMAC =p->achMac;
 	
+	// TODO: Rewrite only for testing
 	if (trackerInfo.eIMU0 == CTracker::EImu::IMU_ICM20948) {
 		auto pTracker = std::make_shared<VRTracker::CIMUTracker>("TEST_IMU_0");
+		pTracker->setBodyPosition(VRTracker::ETrackerPosition::Hip);
+		pTracker->setStatus(VRTracker::ETrackerStatus::Ok);
 		i_pSession->tracker().setImuTracker(0, pTracker);
+		HumanPoseProcessorInstance->addSensorTracker(pTracker);
+		HumanPoseProcessorInstance->setSkeletonTracker(VRTracker::ETrackerPosition::Hip, std::dynamic_pointer_cast<VRTracker::CTracker>(pTracker));
 	}
 
 	if (trackerInfo.eIMU1 == CTracker::EImu::IMU_ICM20948) {
 		auto pTracker = std::make_shared<VRTracker::CIMUTracker>("TEST_IMU_1");
 		i_pSession->tracker().setImuTracker(1, pTracker);
+		HumanPoseProcessorInstance->addSensorTracker(pTracker);
 	}
 
 	i_pSession->tracker().setReady();

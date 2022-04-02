@@ -95,20 +95,116 @@ Window {
             Skeleton {
                 id: qmlskeleton
                 Joint {
-                    id: joint0
+                    id: hmd
                     index: 0
                     skeletonRoot: qmlskeleton
+
                     Joint {
-                        id: joint1
-                        index: 1
-                        skeletonRoot: qmlskeleton
-                    }
-                    Joint {
-                        id: joint2
-                        index: 2
-                        skeletonRoot: qmlskeleton
+                        id: head
+
+                        Joint {
+                            id: neck
+
+                            Joint {
+                                id: chest
+
+                                Joint {
+                                    id: waist
+
+                                    Joint {
+                                        id: hip
+
+                                        Joint {
+                                            id: leftHip
+
+                                            Joint {
+                                                id: leftKnee
+
+                                                Joint {
+                                                    id: leftAnkle
+
+                                                    Joint {
+                                                        id: leftFoot
+
+                                                        Joint {
+                                                            id: leftFootTracker
+                                                        }
+                                                    }
+                                                }
+
+                                                Joint {
+                                                    id: leftKneeTracker
+                                                }
+                                            }
+                                        }
+
+                                        Joint {
+                                            id: rightHip
+
+                                            Joint {
+                                                id: rightKnee
+
+                                                Joint {
+                                                    id: rightAnkle
+
+                                                    Joint {
+                                                        id: rightFoot
+
+                                                        Joint {
+                                                            id: rightFootTracker
+                                                        }
+                                                    }
+                                                }
+
+                                                Joint {
+                                                    id: rightKneeTracker
+                                                }
+                                            }
+                                        }
+
+                                        Joint {
+                                            id: waistTracker
+                                        }
+                                    }
+                                }
+
+                                Joint {
+                                    id: chestTracker
+                                }
+                            }
+                        }
                     }
 
+                }
+
+                Joint {
+                    id: leftHand
+
+                    Joint {
+                        id: leftWrist
+
+                        Joint {
+                            id: leftElbow
+
+                            Joint {
+                                id: leftElbowTracker
+                            }
+                        }
+                    }
+                }
+
+                Joint {
+                    id: rightHand
+                    Joint {
+                        id: rightWrist
+                        Joint {
+                            id: rightElbow
+
+                            Joint {
+                                id: rightElbowTracker
+                            }
+                        }
+                    }
                 }
             }
         }

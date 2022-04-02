@@ -32,10 +32,10 @@ namespace VRTracker {
 		CTrackerPosition(): m_ePos(ETrackerPosition::None) {};
 		virtual ~CTrackerPosition() = default;
 	public:
-		__inline const ETrackerPosition position() {
+		__inline const ETrackerPosition position() const {
 			return this->m_ePos;
 		}
-		__inline const std::string_view designation() {
+		__inline const std::string_view designation() const {
 			return this->m_stDesignation;
 		}
 		__inline const CTrackerRole& role() const {
@@ -52,7 +52,7 @@ namespace VRTracker {
 		{ETrackerPosition::Hmd, CTrackerPosition(ETrackerPosition::Hmd,"HMD",s_aoTrackerRole[ETrackerRole::Hmd])},
 		{ETrackerPosition::Chest, CTrackerPosition(ETrackerPosition::Chest,"body:chest",s_aoTrackerRole[ETrackerRole::Chest])},
 		{ETrackerPosition::Waist, CTrackerPosition(ETrackerPosition::Waist,"body:waist",s_aoTrackerRole[ETrackerRole::Waist])},
-		{ETrackerPosition::Hip, CTrackerPosition(ETrackerPosition::Hip,"body:hip",s_aoTrackerRole[ETrackerRole::None])},
+		{ETrackerPosition::Hip, CTrackerPosition(ETrackerPosition::Hip,"body:hip",s_aoTrackerRole[ETrackerRole::Waist])},
 		{ETrackerPosition::LeftLeg, CTrackerPosition(ETrackerPosition::LeftLeg,"body:left_leg",s_aoTrackerRole[ETrackerRole::LeftKnee])},
 		{ETrackerPosition::RightLeg, CTrackerPosition(ETrackerPosition::RightLeg,"body:right_leg",s_aoTrackerRole[ETrackerRole::RightKnee])},
 		{ETrackerPosition::LeftAnkle, CTrackerPosition(ETrackerPosition::LeftAnkle,"body:left_ankle",s_aoTrackerRole[ETrackerRole::None])},

@@ -82,6 +82,12 @@ void VRProcessor::CSimpleSkeleton::setTracker(VRTracker::ETrackerPosition i_ePos
 	this->m_apTracker[i_ePosition] = i_pTracker;
 }
 
+void VRProcessor::CSimpleSkeleton::setComputedTracker(VRTracker::ETrackerPosition i_ePosition, std::shared_ptr<VRTracker::CComputedHumanPoseTracker> i_pTracker)
+{
+	RecursiveLockGuard(this->m_oMutex);
+	this->m_apComputedTracker[VRTracker::s_aoTrackerPosition[i_ePosition].role().role()] = i_pTracker;
+}
+
 bool VRProcessor::CSimpleSkeleton::getTrackerRotation(VRTracker::ETrackerPosition i_ePosition, QQuaternion& i_oRotation)
 {
 	RecursiveLockGuard(this->m_oMutex);

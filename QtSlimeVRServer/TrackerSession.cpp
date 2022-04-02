@@ -1,10 +1,19 @@
 #include "TrackerSession.h"
 #include "TrackerServer.h"
 #include "Defines.h"
+#include "../Core/HumanPoseProcessor.h"
 #include <library/Logger.h>
 
 void Network::TrackerServer::CSession::close()
 {
+	if (this->m_oTracker.imuTrackerById(0)) {
+		HumanPoseProcessorInstance->removeSensorTracker(this->m_oTracker.imuTrackerById(0));
+	}
+
+	if (this->m_oTracker.imuTrackerById(1)) {
+		HumanPoseProcessorInstance->removeSensorTracker(this->m_oTracker.imuTrackerById(1));
+	}
+
 	LOGI_DEBUG("[TrackerServer] Socket disconnected! IP: " + this->networkIp().toString().toStdString());
 	TrackerServerInstance->removeSession(this->shared_from_this());
 }

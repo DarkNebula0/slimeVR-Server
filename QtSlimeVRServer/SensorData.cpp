@@ -1,5 +1,6 @@
 #include "SensorData.h"
 #include "../Core/HumanPoseProcessor.h"
+#include "../Core/IMUTracker.h"
 #include "TrackerPacket.h"
 #include "InfoSend.h"
 #include "Tracker.h"
@@ -24,6 +25,10 @@ void SensorData::Packet::TrackerServer::RotationDataRequest(const std::shared_pt
 	QQuaternion oQuat = oTest * QQuaternion(QVector4D(p->dX, p->dY, p->dZ, p->dW));
 	QVector3D qVec = oQuat.toEulerAngles();
 	
+	auto pSensorTracker = i_pSession->tracker().imuTrackerById(p->nId);
+	if (pSensorTracker) {
+		pSensorTracker->setRotation(oQuat);
+	}
 
 	GuiInstance->m_oTestTransform.setX(qVec.x());
 	GuiInstance->m_oTestTransform.setY(qVec.y());

@@ -30,6 +30,10 @@ namespace VRTracker {
 		__inline const QQuaternion& correction() const {
 			return this->m_oCorrection;
 		}
+	public:
+		__inline void setRotation(const QQuaternion& i_oRotation) {
+			this->m_oRotQuaternion = i_oRotation;
+		}
 	private:
 		QQuaternion m_oCorrection;
 		QQuaternion m_oRotMagQuaternion;

@@ -9,7 +9,8 @@
 // Global
 #define CONSOLE_TITLE "SlimeVR Server"
 
-// Threads
+// Threads normal for side tasks 500
+// Slow and easy for debug xD
 #define SIDE_TASK_THREAD_DELAY_MS 500
 
 // Network

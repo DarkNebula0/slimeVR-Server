@@ -21,7 +21,7 @@ bool VRTracker::CIMUTracker::position(QVector3D& i_oStore)
 bool VRTracker::CIMUTracker::rotation(QQuaternion& i_oStore)
 {
 	i_oStore = this->m_oRotQuaternion * this->m_oRotAdjust;
-	return false;
+	return true;
 }
 
 void VRTracker::CIMUTracker::resetYaw(const QQuaternion& i_oReference)
